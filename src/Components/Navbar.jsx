@@ -1,8 +1,7 @@
 import React from "react";
 import logo from "../Assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
+import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 const Navbar = () => {
   return (
     <div className="flex items-center">
@@ -24,6 +23,11 @@ const Navbar = () => {
         <button className="border border-gray-300 px-3 py-1 rounded bg-orange-400 text-white font-bold">
           SEARCH
         </button>
+        <div className="flex">
+          <FontAwesomeIcon icon={faUser} 
+          className="w-10 h-5"
+          />
+        </div>
       </div>
     </div>
   );
