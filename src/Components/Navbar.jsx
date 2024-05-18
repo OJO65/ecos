@@ -85,23 +85,23 @@ const Navbar = () => {
           </div>
           {showHelpDropdown && (
             <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center">
-              <ul className="w-full">
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              <ul className="w-full flex flex-col items-center">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-center">
                   Help Center
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-center">
                   Place an Order
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-center">
                   Track Your Order
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-center">
                   Order Cancellation
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-center">
                   Returns & Refunds
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-center">
                   Payment & Jumia Account
                 </li>
               </ul>
