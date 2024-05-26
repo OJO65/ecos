@@ -57,7 +57,7 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faAngleDown} className="left-2 top-3 m-2" />
           </div>
           {showAccountDropdown && (
-            <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center">
+            <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center z-10">
               <button className="border p-2 rounded-md font-bold bg-orange-400 my-2">
                 SIGN IN
               </button>
