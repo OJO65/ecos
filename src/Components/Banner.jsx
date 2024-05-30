@@ -3,11 +3,14 @@ import {
   faBaby,
   faBasketball,
   faBlenderPhone,
+  faCircleQuestion,
   faComputer,
   faHome,
   faListDots,
   faMedkit,
   faMobilePhone,
+  faMoneyBill,
+  faRotateLeft,
   faShirt,
   faShoppingBag,
   faTelevision,
@@ -23,9 +26,9 @@ import gif5 from "../Assets/img/KE_FS_NewArrivals_0524_S.gif";
 import gif6 from "../Assets/img/KE_JA24_Tease_ACD_0524_S3.gif";
 import gif7 from "../Assets/img/KE_JA24_Vote_0524_S.gif";
 import gif8 from "../Assets/img/_S_ecobank.jpg";
-
+import gif9 from "../Assets/img/KE_Generic_JA24_Live_BF.gif";
 const Banner = () => {
-  const gifs = [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8];
+  const gifs = [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8, gif9];
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
 
   useEffect(() => {
@@ -41,7 +44,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex m-2">
+    <div className="flex m-10 bg-white rounded-md">
       <div className="border w-1/6 m-2 p-2 text-sm rounded-md bg-white h-[384px]">
         <ul className="p-2 h-full overflow-auto">
           <li className="py-2">
@@ -104,6 +107,24 @@ const Banner = () => {
               }`}
             />
           ))}
+        </div>
+      </div>
+      <div className="p-2">
+        <div className="border p-2 rounded-md">
+          <ul>
+            <li className="-py-2 font-bold"> <FontAwesomeIcon icon={faCircleQuestion} className="fa-fw fa-2x translate-y-4"/> HELP CENTER
+            <span className="block text-xs pl-11 font-normal">Guide to customer care</span>
+            </li>
+            <li className="py-2 font-bold"> <FontAwesomeIcon icon={faRotateLeft} className="fa-fw fa-2x translate-y-4" /> EASY RETURN
+            <span className="block text-xs pl-11 font-normal">Quick Refund</span>
+            </li>
+            <li className="py-2 font-bold"> <FontAwesomeIcon icon={faMoneyBill} className="fa-fw fa-2x translate-y-4" /> SELL ON JUMIA
+            <span className="block text-xs pl-11 font-normal">Millions of customers</span>
+            </li>
+          </ul>
+        </div>
+        <div className="mt-4 border p-2 rounded-md">
+          <img src={gif9} alt="Uploaded GIF" className="w-full h-full object-contain" />
         </div>
       </div>
     </div>
