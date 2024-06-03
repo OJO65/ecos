@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React, { useState } from "react";
 import logo from "../Assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,11 +27,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-white flex items-center box-border shadow-md">
-      <div className="mr-32 ml-32">
+    <div className="bg-white md:flex items-center box-border shadow-md">
+      <div className="ml-2 mr-32 md:ml-16">
         <img src={logo} className="w-40" alt="Logo" />
       </div>
-      <div className="flex">
+      <div className="md:flex hidden">
         <div className="relative">
           <input
             type="text"
@@ -48,7 +47,7 @@ const Navbar = () => {
           SEARCH
         </button>
       </div>
-      <div className="relative">
+      <div className="relative md:block hidden">
         <div
           className="p-2 m-5  cursor-pointer flex items-center"
           onClick={toggleAccountDropdown}
@@ -75,7 +74,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div className="relative">
+      <div className="relative md:block hidden">
         <div
           className="m-2 p-2 cursor-pointer flex items-center"
           onClick={toggleHelpDropdown}
@@ -111,7 +110,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div className="m-5 p-2 cursor-pointer">
+      <div className="m-5 p-2 cursor-pointer md:block hidden">
         <FontAwesomeIcon icon={faCartShopping} className="h-5 mr-2" /> Cart
       </div>
     </div>

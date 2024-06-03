@@ -45,9 +45,9 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex m-10 bg-orange-500 rounded-md">
-      <div className="border w-1/6 m-2 p-2 text-sm rounded-md bg-white h-[384px]">
-        <ul className="p-2 h-full">
+    <div className="md:flex m-10 bg-orange-500 rounded-md grid-cols-3">
+      <div className="border md:w-1/6 w-96 m-2 p-2 text-sm rounded-md bg-white h-[384px]">
+        <ul className="md:p-1 h-full">
           <li className="p-1 hover:text-orange-500 cursor-pointer">
             <FontAwesomeIcon icon={faShoppingBag} className="mr-2" /> Official
             Stores
@@ -91,7 +91,7 @@ const Banner = () => {
         </ul>
       </div>
 
-      <div className="m-2 border rounded-md flex-grow-0 flex-shrink-0 w-[712px] h-[384px] relative overflow-hidden flex items-center justify-center">
+      <div className="md:m-2 border rounded-md flex-grow-0 flex-shrink-0 md:w-[712px] w-[400px] h-[384px] relative overflow-hidden flex items-center justify-center">
         <img
           src={gifs[currentGifIndex]}
           alt={`GIF ${currentGifIndex + 1}`}
