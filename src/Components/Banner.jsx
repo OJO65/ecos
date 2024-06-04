@@ -14,10 +14,10 @@ import {
   faShirt,
   faShoppingBag,
   faTelevision,
+  faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
-import "../Assets/img/KE_FS_NewArrivals_0524_S.gif";
 import gif1 from "../Assets/img/KE_FS_NewArrivals_0524_S.gif";
 import gif2 from "../Assets/img/KE_Generic_JA24_Teasing_0524_S.gif";
 import gif3 from "../Assets/img/KE_JA24_Live_ACD_Phones_0524_S.gif";
@@ -44,55 +44,103 @@ const Banner = () => {
     setCurrentGifIndex(index);
   };
 
+  const categories = [
+    { 
+      icon: faShoppingBag, 
+      label: "Official Stores",
+      submenu: ["PHONE ACCESSORIES", "HOME", "FASHION"]
+    },
+    { 
+      icon: faMobilePhone, 
+      label: "Phones & Tablets",
+      submenu: ["MOBILE PHONES", "TABLETS", "ACCESSORIES"]
+    },
+    { 
+      icon: faTelevision, 
+      label: "Tvs & Audio",
+      submenu: ["TELEVIONS", "HOME AUDIO", "ACCESSORIES & SUPPLIES"]
+    },
+    { 
+      icon: faBlenderPhone, 
+      label: "Appliances",
+      submenu: ["LARGE APPLIANCES", "SMALL APPLIANCES"]
+    },
+    { 
+      icon: faMedkit, 
+      label: "Health & Beauty",
+      submenu: ["Health 1", "Beauty 1"]
+    },
+    { 
+      icon: faHome, 
+      label: "Home & Office",
+      submenu: ["Home 1", "Office 1"]
+    },
+    { 
+      icon: faShirt, 
+      label: "Fashion",
+      submenu: ["Fashion 1", "Fashion 2"]
+    },
+    { 
+      icon: faComputer, 
+      label: "Computing",
+      submenu: ["Computer 1", "Accessory 1"]
+    },
+    { 
+      icon: faAppleWhole, 
+      label: "Supermarket",
+      submenu: ["Grocery 1", "Grocery 2"]
+    },
+    { 
+      icon: faBaby, 
+      label: "Baby Products",
+      submenu: ["Baby Product 1", "Baby Product 2"]
+    },
+    { 
+      icon: faBasketball, 
+      label: "Sporting Goods",
+      submenu: ["Sport 1", "Sport 2"]
+    },
+    { 
+      icon: faListDots, 
+      label: "Other categories",
+      submenu: ["Category 1", "Category 2"]
+    },
+  ];
+
   return (
     <div className="md:flex hidden m-2 bg-orange-600 rounded-md">
-      <div className="border md:w-1/6 w-96 m-2 p-2 text-sm rounded-md bg-white h-[384px]">
+      <div className="border md:w-1/6 w-96 m-5 p-2 text-sm rounded-md bg-white h-[384px]">
         <ul className="p-1 h-full">
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faShoppingBag} className="mr-2" /> Official
-            Stores
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faMobilePhone} className="mr-2" /> Phones &
-            Tablets
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faTelevision} className="mr-2" /> Tvs & Audio
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faBlenderPhone} className="mr-2" />{" "}
-            Appliances
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faMedkit} className="mr-2" /> Health & Beauty
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faHome} className="mr-2" /> Home & Office
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faShirt} className="mr-2" /> Fashion
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faComputer} className="mr-2" /> Computing
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faAppleWhole} className="mr-2" /> Supermarket
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faBaby} className="mr-2" /> Baby Products
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faBasketball} className="mr-2" /> Sporting
-            Goods
-          </li>
-          <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faListDots} className="mr-2" /> Other
-            categories
-          </li>
+          {categories.map((category, index) => (
+            <li
+              key={index}
+              className="banner-item p-1 hover:text-orange-500 cursor-pointer flex justify-between items-center"
+            >
+              <div>
+                <FontAwesomeIcon icon={category.icon} className="mr-2" />{" "}
+                {category.label}
+              </div>
+              <FontAwesomeIcon icon={faAngleRight} />
+              <div className="submenu">
+                <ul>
+                  {category.submenu.map((item, subIndex) => (
+                    <React.Fragment key={subIndex}>
+                      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        {item}
+                      </li>
+                      {subIndex < category.submenu.length - 1 && (
+                        <hr className="border-t-2 border-gray-300 w-full" />
+                      )}
+                    </React.Fragment>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
 
-      <div className="md:m-2 border rounded-md flex-grow-0 flex-shrink-0 md:w-[712px] w-[400px] h-[384px] relative overflow-hidden flex items-center justify-center">
+      <div className="md:m-5 border border-orange-700 rounded-md flex-grow-0 flex-shrink-0 md:w-[712px] w-[400px] h-[384px] relative overflow-hidden flex items-center justify-center">
         <img
           src={gifs[currentGifIndex]}
           alt={`GIF ${currentGifIndex + 1}`}
@@ -110,8 +158,9 @@ const Banner = () => {
           ))}
         </div>
       </div>
-      <div className="bg-white rounded-md m-2 md:h-[185px] h-[100px] flex flex-col justify-between w-96">
-        <div className="p-2 rounded-md">
+
+      <div className="flex flex-col m-3">
+        <div className="bg-white rounded-md m-2 p-2 w-[218px] h-[184px] flex flex-col justify-between">
           <ul>
             <li className="p-1 font-bold">
               <FontAwesomeIcon
@@ -145,12 +194,8 @@ const Banner = () => {
             </li>
           </ul>
         </div>
-        <div className="rounded-md h-[195px]">
-          <img
-            src={gif9}
-            alt="Uploaded GIF"
-            className=" w-full h-full"
-          />
+        <div className="rounded-md w-[218px] h-[184px] m-2">
+          <img src={gif9} alt="Uploaded GIF" className="w-full h-full object-cover" />
         </div>
       </div>
     </div>
