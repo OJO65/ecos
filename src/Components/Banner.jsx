@@ -45,9 +45,9 @@ const Banner = () => {
   };
 
   return (
-    <div className="md:flex m-10 bg-orange-500 rounded-md grid-cols-3">
+    <div className="md:flex hidden m-2 bg-orange-600 rounded-md">
       <div className="border md:w-1/6 w-96 m-2 p-2 text-sm rounded-md bg-white h-[384px]">
-        <ul className="md:p-1 h-full">
+        <ul className="p-1 h-full">
           <li className="p-1 hover:text-orange-500 cursor-pointer">
             <FontAwesomeIcon icon={faShoppingBag} className="mr-2" /> Official
             Stores
@@ -60,7 +60,8 @@ const Banner = () => {
             <FontAwesomeIcon icon={faTelevision} className="mr-2" /> Tvs & Audio
           </li>
           <li className="p-1 hover:text-orange-500 cursor-pointer">
-            <FontAwesomeIcon icon={faBlenderPhone} className="mr-2" /> Appliances
+            <FontAwesomeIcon icon={faBlenderPhone} className="mr-2" />{" "}
+            Appliances
           </li>
           <li className="p-1 hover:text-orange-500 cursor-pointer">
             <FontAwesomeIcon icon={faMedkit} className="mr-2" /> Health & Beauty
@@ -109,25 +110,47 @@ const Banner = () => {
           ))}
         </div>
       </div>
-      <div className=" bg-white rounded-md m-2 h-[384px] flex flex-col justify-between">
-        <div className="border p-2 rounded-md">
+      <div className="bg-white rounded-md m-2 md:h-[185px] h-[100px] flex flex-col justify-between w-96">
+        <div className="p-2 rounded-md">
           <ul>
             <li className="p-1 font-bold">
-              <FontAwesomeIcon icon={faCircleQuestion} className="fa-fw fa-2x translate-y-4"/> HELP CENTER
-              <span className="block text-xs pl-11 font-normal">Guide to customer care</span>
+              <FontAwesomeIcon
+                icon={faCircleQuestion}
+                className="fa-fw fa-2x translate-y-4"
+              />{" "}
+              HELP CENTER
+              <span className="block text-xs pl-11 font-normal">
+                Guide to customer care
+              </span>
             </li>
             <li className="p-1 font-bold">
-              <FontAwesomeIcon icon={faRotateLeft} className="fa-fw fa-2x translate-y-4" /> EASY RETURN
-              <span className="block text-xs pl-11 font-normal">Quick Refund</span>
+              <FontAwesomeIcon
+                icon={faRotateLeft}
+                className="fa-fw fa-2x translate-y-4"
+              />{" "}
+              EASY RETURN
+              <span className="block text-xs pl-11 font-normal">
+                Quick Refund
+              </span>
             </li>
             <li className="p-1 font-bold">
-              <FontAwesomeIcon icon={faMoneyBill} className="fa-fw fa-2x translate-y-4" /> SELL ON JUMIA
-              <span className="block text-xs pl-11 font-normal">Millions of customers</span>
+              <FontAwesomeIcon
+                icon={faMoneyBill}
+                className="fa-fw fa-2x translate-y-4"
+              />{" "}
+              SELL ON JUMIA
+              <span className="block text-xs pl-11 font-normal">
+                Millions of customers
+              </span>
             </li>
           </ul>
         </div>
-        <div className="border p-1 rounded-md">
-          <img src={gif9} alt="Uploaded GIF" className="w-full h-full object-contain" />
+        <div className="rounded-md h-[195px]">
+          <img
+            src={gif9}
+            alt="Uploaded GIF"
+            className=" w-full h-full"
+          />
         </div>
       </div>
     </div>
