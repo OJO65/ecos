@@ -83,7 +83,7 @@ const Navbar = () => {
           Help <FontAwesomeIcon icon={faAngleDown} className="left-2 top-3 m-2" />
         </div>
         {showHelpDropdown && (
-          <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center">
+          <div className="z-10 absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center">
             <ul className="w-full flex flex-col items-center">
               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-center">
                 Help Center

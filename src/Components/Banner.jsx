@@ -58,7 +58,7 @@ const Banner = () => {
     { 
       icon: faTelevision, 
       label: "Tvs & Audio",
-      submenu: ["TELEVIONS", "HOME AUDIO", "ACCESSORIES & SUPPLIES"]
+      submenu: ["TELEVISIONS", "HOME AUDIO", "ACCESSORIES & SUPPLIES"]
     },
     { 
       icon: faBlenderPhone, 
@@ -68,42 +68,42 @@ const Banner = () => {
     { 
       icon: faMedkit, 
       label: "Health & Beauty",
-      submenu: ["Health 1", "Beauty 1"]
+      submenu: ["FACIAL SKIN CARE", "MAKEUP"]
     },
     { 
       icon: faHome, 
       label: "Home & Office",
-      submenu: ["Home 1", "Office 1"]
+      submenu: ["HOME KITCHEN", "OFFICE PRODUCTS"]
     },
     { 
       icon: faShirt, 
       label: "Fashion",
-      submenu: ["Fashion 1", "Fashion 2"]
+      submenu: ["MEN'S FASHION", "WOMEN'S FASHION", "KID'S FASHION"]
     },
     { 
       icon: faComputer, 
       label: "Computing",
-      submenu: ["Computer 1", "Accessory 1"]
+      submenu: ["LAPTOPS", "COMPUTER & ACCESSORIES"]
     },
     { 
       icon: faAppleWhole, 
       label: "Supermarket",
-      submenu: ["Grocery 1", "Grocery 2"]
+      submenu: ["FOOD CUPBOARD", "DRINKS", "DRINK BRANDS"]
     },
     { 
       icon: faBaby, 
       label: "Baby Products",
-      submenu: ["Baby Product 1", "Baby Product 2"]
+      submenu: ["FEEDING", "DIAPERS", "BABY SAFETY"]
     },
     { 
       icon: faBasketball, 
       label: "Sporting Goods",
-      submenu: ["Sport 1", "Sport 2"]
+      submenu: ["SPORTS & FITNESS", "SPORTS NUTRITION"]
     },
     { 
       icon: faListDots, 
       label: "Other categories",
-      submenu: ["Category 1", "Category 2"]
+      submenu: ["AUTOMOBILE", "GAMING"]
     },
   ];
 
@@ -121,7 +121,7 @@ const Banner = () => {
                 {category.label}
               </div>
               <FontAwesomeIcon icon={faAngleRight} />
-              <div className="submenu">
+              <div className="submenu text-slate-950">
                 <ul>
                   {category.submenu.map((item, subIndex) => (
                     <React.Fragment key={subIndex}>
