@@ -31,6 +31,8 @@ import gif9 from "../Assets/img/KE_Generic_JA24_Live_BF.gif";
 const Banner = () => {
   const gifs = [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8, gif9];
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
+  const [showPhoneAccessories, setShowPhoneAccessories] = useState(false);
+  const [hoveredSubMenu, setHoveredSubMenu] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -108,33 +110,52 @@ const Banner = () => {
   ];
 
   return (
-    <div className="md:flex hidden m-2 bg-orange-600 rounded-md">
-      <div className="border md:w-1/6 w-96 m-5 p-2 text-sm rounded-md bg-white h-[384px]">
+    <div className="md:flex hidden m-2 bg-orange-600 rounded-md relative">
+      <div className="border md:w-1/6 w-96 m-5 p-2 text-sm rounded-md bg-white h-[384px] relative">
         <ul className="p-1 h-full">
           {categories.map((category, index) => (
             <li
               key={index}
-              className="banner-item p-1 hover:text-orange-500 cursor-pointer flex justify-between items-center"
+              className="banner-item p-1 hover:text-orange-500 cursor-pointer flex justify-between items-center relative"
+              onMouseEnter={() => setHoveredSubMenu(index)}
+              onMouseLeave={() => setHoveredSubMenu(null)}
             >
               <div>
                 <FontAwesomeIcon icon={category.icon} className="mr-2" />{" "}
                 {category.label}
               </div>
               <FontAwesomeIcon icon={faAngleRight} />
-              <div className="submenu text-slate-950">
-                <ul>
-                  {category.submenu.map((item, subIndex) => (
-                    <React.Fragment key={subIndex}>
-                      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                        {item}
+              {hoveredSubMenu === index && (
+                <div className="absolute top-0 left-full ml-2 w-auto text-xs bg-white shadow-lg rounded-md flex z-20">
+                  <ul className="flex">
+                    {category.submenu.map((item, subIndex) => (
+                      <li
+                        key={subIndex}
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                        onMouseEnter={() => {
+                          if (item === "PHONE ACCESSORIES") {
+                            setShowPhoneAccessories(true);
+                          }
+                        }}
+                        onMouseLeave={() => {
+                          if (item === "PHONE ACCESSORIES") {
+                            setShowPhoneAccessories(false);
+                          }
+                        }}
+                      >
+                       <div className="whitespace-nowrap"> {item}</div>
+                       <hr className="my-1 border-gray-200"/>
                       </li>
-                      {subIndex < category.submenu.length - 1 && (
-                        <hr className="border-t-2 border-gray-300 w-full" />
-                      )}
-                    </React.Fragment>
-                  ))}
-                </ul>
-              </div>
+                    ))}
+                    
+                  </ul>
+                  {showPhoneAccessories && (
+                    <div className="absolute top-full mt-2 w-full bg-gray-100 p-4 z-10">
+                      <p>Content about phone accessories goes here...</p>
+                    </div>
+                  )}
+                </div>
+              )}
             </li>
           ))}
         </ul>
