@@ -33,6 +33,7 @@ const Banner = () => {
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
   const [showPhoneAccessories, setShowPhoneAccessories] = useState(false);
   const [hoveredSubMenu, setHoveredSubMenu] = useState(null);
+  const [isHoveringList, setIsHoveringList] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,70 +48,74 @@ const Banner = () => {
   };
 
   const categories = [
-    { 
-      icon: faShoppingBag, 
+    {
+      icon: faShoppingBag,
       label: "Official Stores",
-      submenu: ["PHONE ACCESSORIES", "HOME", "FASHION"]
+      submenu: ["PHONE ACCESSORIES", "HOME", "FASHION"],
     },
-    { 
-      icon: faMobilePhone, 
+    {
+      icon: faMobilePhone,
       label: "Phones & Tablets",
-      submenu: ["MOBILE PHONES", "TABLETS", "ACCESSORIES"]
+      submenu: ["MOBILE PHONES", "TABLETS", "ACCESSORIES"],
     },
-    { 
-      icon: faTelevision, 
+    {
+      icon: faTelevision,
       label: "Tvs & Audio",
-      submenu: ["TELEVISIONS", "HOME AUDIO", "ACCESSORIES & SUPPLIES"]
+      submenu: ["TELEVISIONS", "HOME AUDIO", "ACCESSORIES & SUPPLIES"],
     },
-    { 
-      icon: faBlenderPhone, 
+    {
+      icon: faBlenderPhone,
       label: "Appliances",
-      submenu: ["LARGE APPLIANCES", "SMALL APPLIANCES"]
+      submenu: ["LARGE APPLIANCES", "SMALL APPLIANCES"],
     },
-    { 
-      icon: faMedkit, 
+    {
+      icon: faMedkit,
       label: "Health & Beauty",
-      submenu: ["FACIAL SKIN CARE", "MAKEUP"]
+      submenu: ["FACIAL SKIN CARE", "MAKEUP"],
     },
-    { 
-      icon: faHome, 
+    {
+      icon: faHome,
       label: "Home & Office",
-      submenu: ["HOME KITCHEN", "OFFICE PRODUCTS"]
+      submenu: ["HOME KITCHEN", "OFFICE PRODUCTS"],
     },
-    { 
-      icon: faShirt, 
+    {
+      icon: faShirt,
       label: "Fashion",
-      submenu: ["MEN'S FASHION", "WOMEN'S FASHION", "KID'S FASHION"]
+      submenu: ["MEN'S FASHION", "WOMEN'S FASHION", "KID'S FASHION"],
     },
-    { 
-      icon: faComputer, 
+    {
+      icon: faComputer,
       label: "Computing",
-      submenu: ["LAPTOPS", "COMPUTER & ACCESSORIES"]
+      submenu: ["LAPTOPS", "COMPUTER & ACCESSORIES"],
     },
-    { 
-      icon: faAppleWhole, 
+    {
+      icon: faAppleWhole,
       label: "Supermarket",
-      submenu: ["FOOD CUPBOARD", "DRINKS", "DRINK BRANDS"]
+      submenu: ["FOOD CUPBOARD", "DRINKS", "DRINK BRANDS"],
     },
-    { 
-      icon: faBaby, 
+    {
+      icon: faBaby,
       label: "Baby Products",
-      submenu: ["FEEDING", "DIAPERS", "BABY SAFETY"]
+      submenu: ["FEEDING", "DIAPERS", "BABY SAFETY"],
     },
-    { 
-      icon: faBasketball, 
+    {
+      icon: faBasketball,
       label: "Sporting Goods",
-      submenu: ["SPORTS & FITNESS", "SPORTS NUTRITION"]
+      submenu: ["SPORTS & FITNESS", "SPORTS NUTRITION"],
     },
-    { 
-      icon: faListDots, 
+    {
+      icon: faListDots,
       label: "Other categories",
-      submenu: ["AUTOMOBILE", "GAMING"]
+      submenu: ["AUTOMOBILE", "GAMING"],
     },
   ];
 
   return (
-    <div className="md:flex hidden m-2 bg-orange-600 rounded-md relative">
+    <div
+      className="md:flex hidden m-2 bg-orange-600 rounded-md relative"
+      onMouseEnter={() => setIsHoveringList(true)}
+      onMouseLeave={() => setIsHoveringList(false)}
+    >
       <div className="border md:w-1/6 w-96 m-5 p-2 text-sm rounded-md bg-white h-[384px] relative">
         <ul className="p-1 h-full">
           {categories.map((category, index) => (
@@ -125,37 +130,43 @@ const Banner = () => {
                 {category.label}
               </div>
               <FontAwesomeIcon icon={faAngleRight} />
-              {hoveredSubMenu === index && (
-                <div className="absolute top-0 left-full ml-2 w-auto text-xs bg-white shadow-lg rounded-md flex z-20">
-                  <ul className="flex">
-                    {category.submenu.map((item, subIndex) => (
-                      <li
-                        key={subIndex}
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onMouseEnter={() => {
-                          if (item === "PHONE ACCESSORIES") {
-                            setShowPhoneAccessories(true);
-                          }
-                        }}
-                        onMouseLeave={() => {
-                          if (item === "PHONE ACCESSORIES") {
-                            setShowPhoneAccessories(false);
-                          }
-                        }}
-                      >
-                       <div className="whitespace-nowrap"> {item}</div>
-                       <hr className="my-1 border-gray-200"/>
-                      </li>
-                    ))}
-                    
-                  </ul>
-                  {showPhoneAccessories && (
-                    <div className="absolute top-full mt-2 w-full bg-gray-100 p-4 z-10">
-                      <p>Content about phone accessories goes here...</p>
-                    </div>
-                  )}
-                </div>
-              )}
+              {hoveredSubMenu === index &&
+                (isHoveringList || showPhoneAccessories) && (
+                  <div className="absolute top-0 left-full ml-2 w-auto text-xs bg-white shadow-lg rounded-md flex z-20">
+                    <ul className="flex text-black">
+                      {category.submenu.map((item, subIndex) => (
+                        <li
+                          key={subIndex}
+                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                          onMouseEnter={() => {
+                            if (item === "PHONE ACCESSORIES") {
+                              setShowPhoneAccessories(true);
+                            }
+                          }}
+                          onMouseLeave={() => {
+                            if (item === "PHONE ACCESSORIES") {
+                              setShowPhoneAccessories(false);
+                            }
+                          }}
+                        >
+                          <div className="whitespace-nowrap"> {item}</div>
+                          <hr className="my-1 border-gray-200" />
+                        </li>
+                      ))}
+                    </ul>
+                    {showPhoneAccessories && (
+                      <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
+                        <ul>
+                          <li>Samsung</li>
+                          <li>Tecno</li>
+                          <li>Infinix</li>
+                          <li>FreeYond</li>
+                          <li>Oraimo</li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
             </li>
           ))}
         </ul>
@@ -216,7 +227,11 @@ const Banner = () => {
           </ul>
         </div>
         <div className="rounded-md w-[218px] h-[184px] m-2">
-          <img src={gif9} alt="Uploaded GIF" className="w-full h-full object-cover" />
+          <img
+            src={gif9}
+            alt="Uploaded GIF"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>
