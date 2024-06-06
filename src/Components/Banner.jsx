@@ -83,28 +83,43 @@ const Banner = () => {
         {label: "LARGE APPLIANCES", id: "large-appliances"},
         {label: "SMALL APPLIANCES", id: "small-appliances"},
         {label: "COOKING APPLIANCES", id: "cooking-appliances"},
-        {label: "BEST SELLER APPLIANCES", id: "best-seller"}
         ],
     },
     {
       icon: faMedkit,
       label: "Health & Beauty",
-      submenu: ["FACIAL SKIN CARE", "MAKEUP"],
+      submenu: [
+        {label: "FACIAL SKIN CARE", id: "facial-skin-care"},
+        {label: "MAKE UP", id: "makeup"},
+        {label: "HEALTH & WELLNESS", id: "health-wellness"}
+      ],
     },
     {
       icon: faHome,
       label: "Home & Office",
-      submenu: ["HOME KITCHEN", "OFFICE PRODUCTS"],
+      submenu: [
+        {label: "HOME KITCHEN", id: "home-kitchen"},
+        {label: "OFFICE PRODUCTS", id: "office-products"},
+        {label: "HOME BRANDS", id: "home-brands"},
+      ],
     },
     {
       icon: faShirt,
       label: "Fashion",
-      submenu: ["MEN'S FASHION", "WOMEN'S FASHION", "KID'S FASHION"],
+      submenu: [
+        {label: "MEN'S FASHION", id: "mens-fashion"},
+        {label: "WOMEN'S FASHION", id: "womens-fashion"},
+        {label: "KID'S FASHION", id: "kids-fashion"},
+      ],
     },
     {
       icon: faComputer,
       label: "Computing",
-      submenu: ["LAPTOPS", "COMPUTER & ACCESSORIES"],
+      submenu: [
+        {label: "LAPTOPS", id: "laptops"},
+        {label: "COMPUTER COMPONENTS", id: "computer-components"},
+        {label: "COMPUTER & ACCESSORIES", id: "computer-acessories"},
+      ],
     },
     {
       icon: faAppleWhole,
