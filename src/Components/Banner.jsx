@@ -32,6 +32,7 @@ const Banner = () => {
   const gifs = [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8, gif9];
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
   const [showPhoneAccessories, setShowPhoneAccessories] = useState(false);
+  const [showHome, setShowHome] = useState(false);
   const [hoveredSubMenu, setHoveredSubMenu] = useState(null);
   const [isHoveringList, setIsHoveringList] = useState(false);
 
@@ -51,22 +52,39 @@ const Banner = () => {
     {
       icon: faShoppingBag,
       label: "Official Stores",
-      submenu: ["PHONE ACCESSORIES", "HOME", "FASHION"],
+      submenu: [
+        {label: "PHONE ACESSORIES", id: "phone-accessories"},
+        {label: "HOME", id: "home"},
+        {label: "FASHION", id: "fashion"},
+      ],
     },
     {
       icon: faMobilePhone,
       label: "Phones & Tablets",
-      submenu: ["MOBILE PHONES", "TABLETS", "ACCESSORIES"],
+      submenu: [
+        {label: "MOBILE PHONES", id: "mobile phones"},
+        {label: "TABLETS", id: "tablets"},
+        {label: "ACCESSORIES & SUPPLIES", id: "accessories-supplies"},
+      ],
     },
     {
       icon: faTelevision,
       label: "Tvs & Audio",
-      submenu: ["TELEVISIONS", "HOME AUDIO", "ACCESSORIES & SUPPLIES"],
+      submenu: [
+        {label: "TELEVISIONS", id: "televisions"},
+        {label: "HOME AUDIO", id: "home-audio"},
+        {label: "ACCESSORIES & SUPPLIES", id: "accessories-supplies"},
+      ],
     },
     {
       icon: faBlenderPhone,
       label: "Appliances",
-      submenu: ["LARGE APPLIANCES", "SMALL APPLIANCES"],
+      submenu: [
+        {label: "LARGE APPLIANCES", id: "large-appliances"},
+        {label: "SMALL APPLIANCES", id: "small-appliances"},
+        {label: "COOKING APPLIANCES", id: "cooking-appliances"},
+        {label: "BEST SELLER APPLIANCES", id: "best-seller"}
+        ],
     },
     {
       icon: faMedkit,
@@ -131,7 +149,7 @@ const Banner = () => {
               </div>
               <FontAwesomeIcon icon={faAngleRight} />
               {hoveredSubMenu === index &&
-                (isHoveringList || showPhoneAccessories) && (
+                (isHoveringList || showPhoneAccessories || showHome) && (
                   <div className="absolute top-0 left-full ml-2 w-auto text-xs bg-white shadow-lg rounded-md flex z-20">
                     <ul className="flex text-black">
                       {category.submenu.map((item, subIndex) => (
@@ -139,7 +157,7 @@ const Banner = () => {
                           key={subIndex}
                           className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                           onMouseEnter={() => {
-                            if (item === "PHONE ACCESSORIES") {
+                            if (item === "PHONE ACCESSORIES, HOME") {
                               setShowPhoneAccessories(true);
                             }
                           }}
@@ -155,6 +173,17 @@ const Banner = () => {
                       ))}
                     </ul>
                     {showPhoneAccessories && (
+                      <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
+                        <ul>
+                          <li>Samsung</li>
+                          <li>Tecno</li>
+                          <li>Infinix</li>
+                          <li>FreeYond</li>
+                          <li>Oraimo</li>
+                        </ul>
+                      </div>
+                    )}
+                       {showHome && (
                       <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
                         <ul>
                           <li>Samsung</li>
