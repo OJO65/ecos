@@ -34,6 +34,7 @@ const Banner = () => {
   const [showPhoneAccessories, setShowPhoneAccessories] = useState(false);
   const [showHome, setShowHome] = useState(false);
   const [showFashion, setShowFashion] = useState(false);
+  const [showMobilePhones, setShowMobilePhones] = useState(false);
   const [hoveredSubMenu, setHoveredSubMenu] = useState(null);
   const [isHoveringList, setIsHoveringList] = useState(false);
 
@@ -195,14 +196,30 @@ const Banner = () => {
                           if (item.id === "phone-accessories") {
                             setShowPhoneAccessories(true);
                             setShowHome(false);
+                            setShowFashion(false);
+                            setShowMobilePhones(false);
                           } else if (item.id === "home") {
                             setShowHome(true);
                             setShowPhoneAccessories(false);
+                            setShowFashion(false);
+                            setShowMobilePhones(false);
+                          } else if (item.id === "fashion") {
+                            setShowFashion(true);
+                            setShowPhoneAccessories(false);
+                            setShowHome(false);
+                            setShowMobilePhones(false);
+                          } else if (item.id === "mobile-phones") {
+                            setShowMobilePhones(true);
+                            setShowPhoneAccessories(false);
+                            setShowHome(false);
+                            setShowFashion(false);
                           }
                         }}
                         onMouseLeave={() => {
                           setShowPhoneAccessories(false);
                           setShowHome(false);
+                          setShowFashion(false);
+                          setShowMobilePhones(false);
                         }}
                       >
                         <div className="whitespace-nowrap"> {item.label}</div>
@@ -232,7 +249,27 @@ const Banner = () => {
                       </ul>
                     </div>
                   )}
-                  
+                  {showFashion && (
+                    <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
+                      <ul>
+                        <li>Adidas</li>
+                        <li>Nike</li>
+                        <li>Ecko Unltd</li>
+                        <li>Converse</li>
+                        <li>Puma</li>
+                      </ul>
+                    </div>
+                  )}
+                  {showMobilePhones && (
+                    <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
+                      <ul>
+                        <li>Smartphones</li>
+                        <li>Feature Phones</li>
+                        <li>Smartphones under 10k</li>
+                        <li>Feature Phones under 2k</li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
               )}
             </li>
