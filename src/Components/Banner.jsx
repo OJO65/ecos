@@ -124,22 +124,42 @@ const Banner = () => {
     {
       icon: faAppleWhole,
       label: "Supermarket",
-      submenu: ["FOOD CUPBOARD", "DRINKS", "DRINK BRANDS"],
+      submenu: [
+        {label: "FOOD CUPBOARD", id: "food-cupboard"},
+        {label: "DRINKS", id: "drinks"},
+        {label: "DRINKS BRANDS", id: "drinks-brands"},
+        {label: "HOUSEHOLD SUPPLIES", id: "household-supplies"}
+      ],
     },
     {
       icon: faBaby,
       label: "Baby Products",
-      submenu: ["FEEDING", "DIAPERS", "BABY SAFETY"],
+      submenu: [
+        {label: "FEEDING", id: "feeding"},
+        {label: "DIAPERING", id: "diapering"},
+        {label: "BABY SAFETY", id: "baby-safety"},
+        {label: "BABY & TODLER TOYS", id: "baby-toys"}
+      ],
     },
     {
       icon: faBasketball,
       label: "Sporting Goods",
-      submenu: ["SPORTS & FITNESS", "SPORTS NUTRITION"],
+      submenu: [
+        {label: "SPORTS & FITNESS", id: "sports-fitness"},
+        {label: "SPORTS NUTRITION", id: "sports-nutrition"},
+        {label: "SPORTS BRANDS", id: "sports-brands"},
+        {label: "OUTDOOR RECREATION", id: "outdoor-recreation"}
+      ],
     },
     {
       icon: faListDots,
       label: "Other categories",
-      submenu: ["AUTOMOBILE", "GAMING"],
+      submenu: [
+        {label: "AUTOMOBILE", id: "automobile"},
+        {label: "GAMING", id: "gaming"},
+        {label: "GARDEN & OUTDOORS", id: "garden-outdoors"},
+        {label: "BOOKS, MOVIES & MUSIC", id: "movies-music"}
+      ],
     },
   ];
 
@@ -201,11 +221,11 @@ const Banner = () => {
                        {showHome && (
                       <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
                         <ul>
-                          <li>Samsung</li>
-                          <li>Tecno</li>
-                          <li>Infinix</li>
-                          <li>FreeYond</li>
-                          <li>Oraimo</li>
+                          <li>Solarmax</li>
+                          <li>Nunix</li>
+                          <li>Annov</li>
+                          <li>Redberyy</li>
+                          <li>Miniso</li>
                         </ul>
                       </div>
                     )}
