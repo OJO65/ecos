@@ -31,10 +31,6 @@ import gif9 from "../Assets/img/KE_Generic_JA24_Live_BF.gif";
 const Banner = () => {
   const gifs = [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8, gif9];
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
-  const [showPhoneAccessories, setShowPhoneAccessories] = useState(false);
-  const [showHome, setShowHome] = useState(false);
-  const [showFashion, setShowFashion] = useState(false);
-  const [showMobilePhones, setShowMobilePhones] = useState(false);
   const [hoveredSubMenu, setHoveredSubMenu] = useState(null);
   const [isHoveringList, setIsHoveringList] = useState(false);
 
@@ -59,6 +55,17 @@ const Banner = () => {
         { label: "HOME", id: "home" },
         { label: "FASHION", id: "fashion" },
       ],
+      submenuProducts: {
+        "phone-accessories": [
+          "Samsung",
+          "Tecno",
+          "Infinix",
+          "FreeYond",
+          "Oraimo",
+        ],
+        "home": ["Solarmax", "Nunix", "Annov", "Redberry", "Miniso"],
+        "fashion": ["Adidas", "Nike", "Ecko Unltd", "Converse", "Puma"],
+      },
     },
     {
       icon: faMobilePhone,
@@ -68,6 +75,16 @@ const Banner = () => {
         { label: "TABLETS", id: "tablets" },
         { label: "ACCESSORIES & SUPPLIES", id: "accessories-supplies" },
       ],
+      submenuProducts: {
+        "mobile-phones": [
+          "Smarphones",
+          "Feature Phones",
+          "Smartphones under 10k",
+          "Feature Phones under 2k",
+        ],
+        "tablets": ["Tablets", "Tablet Accessories", "Tablet Bags & Covers"],
+        "accessories-supplies": ["Accessories & Video Supplies", "Batteries", "Batteries, Chargers & Accessories", "Cables", "Power Protection"],
+      },
     },
     {
       icon: faTelevision,
@@ -184,92 +201,28 @@ const Banner = () => {
                 <FontAwesomeIcon icon={category.icon} className="mr-2" />{" "}
                 {category.label}
               </div>
-              <FontAwesomeIcon icon={faAngleRight} />
               {hoveredSubMenu === index && isHoveringList && (
                 <div className="absolute top-0 left-full ml-2 w-auto text-xs bg-white shadow-lg rounded-md flex z-20">
                   <ul className="flex text-black">
                     {category.submenu.map((item, subIndex) => (
                       <li
                         key={subIndex}
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onMouseEnter={() => {
-                          if (item.id === "phone-accessories") {
-                            setShowPhoneAccessories(true);
-                            setShowHome(false);
-                            setShowFashion(false);
-                            setShowMobilePhones(false);
-                          } else if (item.id === "home") {
-                            setShowHome(true);
-                            setShowPhoneAccessories(false);
-                            setShowFashion(false);
-                            setShowMobilePhones(false);
-                          } else if (item.id === "fashion") {
-                            setShowFashion(true);
-                            setShowPhoneAccessories(false);
-                            setShowHome(false);
-                            setShowMobilePhones(false);
-                          } else if (item.id === "mobile-phones") {
-                            setShowMobilePhones(true);
-                            setShowPhoneAccessories(false);
-                            setShowHome(false);
-                            setShowFashion(false);
-                          }
-                        }}
-                        onMouseLeave={() => {
-                          setShowPhoneAccessories(false);
-                          setShowHome(false);
-                          setShowFashion(false);
-                          setShowMobilePhones(false);
-                        }}
+                        className="px-4 py-2 hover:bg-gray-100 h-full cursor-pointer relative"
                       >
                         <div className="whitespace-nowrap"> {item.label}</div>
                         <hr className="my-1 border-gray-200" />
+                        <div>
+                          <ul>
+                            {categories[index].submenuProducts[item.id].map(
+                              (product, productIndex) => (
+                                <li key={productIndex}>{product}</li>
+                              )
+                            )}
+                          </ul>
+                        </div>
                       </li>
                     ))}
                   </ul>
-                  {showPhoneAccessories && (
-                    <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
-                      <ul>
-                        <li>Samsung</li>
-                        <li>Tecno</li>
-                        <li>Infinix</li>
-                        <li>FreeYond</li>
-                        <li>Oraimo</li>
-                      </ul>
-                    </div>
-                  )}
-                  {showHome && (
-                    <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
-                      <ul>
-                        <li>Solarmax</li>
-                        <li>Nunix</li>
-                        <li>Annov</li>
-                        <li>Redberry</li>
-                        <li>Miniso</li>
-                      </ul>
-                    </div>
-                  )}
-                  {showFashion && (
-                    <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
-                      <ul>
-                        <li>Adidas</li>
-                        <li>Nike</li>
-                        <li>Ecko Unltd</li>
-                        <li>Converse</li>
-                        <li>Puma</li>
-                      </ul>
-                    </div>
-                  )}
-                  {showMobilePhones && (
-                    <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
-                      <ul>
-                        <li>Smartphones</li>
-                        <li>Feature Phones</li>
-                        <li>Smartphones under 10k</li>
-                        <li>Feature Phones under 2k</li>
-                      </ul>
-                    </div>
-                  )}
                 </div>
               )}
             </li>
