@@ -33,6 +33,7 @@ const Banner = () => {
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
   const [showPhoneAccessories, setShowPhoneAccessories] = useState(false);
   const [showHome, setShowHome] = useState(false);
+  const [showFashion, setShowFashion] = useState(false);
   const [hoveredSubMenu, setHoveredSubMenu] = useState(null);
   const [isHoveringList, setIsHoveringList] = useState(false);
 
@@ -53,112 +54,112 @@ const Banner = () => {
       icon: faShoppingBag,
       label: "Official Stores",
       submenu: [
-        {label: "PHONE ACESSORIES", id: "phone-accessories"},
-        {label: "HOME", id: "home"},
-        {label: "FASHION", id: "fashion"},
+        { label: "PHONE ACCESSORIES", id: "phone-accessories" },
+        { label: "HOME", id: "home" },
+        { label: "FASHION", id: "fashion" },
       ],
     },
     {
       icon: faMobilePhone,
       label: "Phones & Tablets",
       submenu: [
-        {label: "MOBILE PHONES", id: "mobile phones"},
-        {label: "TABLETS", id: "tablets"},
-        {label: "ACCESSORIES & SUPPLIES", id: "accessories-supplies"},
+        { label: "MOBILE PHONES", id: "mobile-phones" },
+        { label: "TABLETS", id: "tablets" },
+        { label: "ACCESSORIES & SUPPLIES", id: "accessories-supplies" },
       ],
     },
     {
       icon: faTelevision,
       label: "Tvs & Audio",
       submenu: [
-        {label: "TELEVISIONS", id: "televisions"},
-        {label: "HOME AUDIO", id: "home-audio"},
-        {label: "ACCESSORIES & SUPPLIES", id: "accessories-supplies"},
+        { label: "TELEVISIONS", id: "televisions" },
+        { label: "HOME AUDIO", id: "home-audio" },
+        { label: "ACCESSORIES & SUPPLIES", id: "accessories-supplies" },
       ],
     },
     {
       icon: faBlenderPhone,
       label: "Appliances",
       submenu: [
-        {label: "LARGE APPLIANCES", id: "large-appliances"},
-        {label: "SMALL APPLIANCES", id: "small-appliances"},
-        {label: "COOKING APPLIANCES", id: "cooking-appliances"},
-        ],
+        { label: "LARGE APPLIANCES", id: "large-appliances" },
+        { label: "SMALL APPLIANCES", id: "small-appliances" },
+        { label: "COOKING APPLIANCES", id: "cooking-appliances" },
+      ],
     },
     {
       icon: faMedkit,
       label: "Health & Beauty",
       submenu: [
-        {label: "FACIAL SKIN CARE", id: "facial-skin-care"},
-        {label: "MAKE UP", id: "makeup"},
-        {label: "HEALTH & WELLNESS", id: "health-wellness"}
+        { label: "FACIAL SKIN CARE", id: "facial-skin-care" },
+        { label: "MAKE UP", id: "makeup" },
+        { label: "HEALTH & WELLNESS", id: "health-wellness" },
       ],
     },
     {
       icon: faHome,
       label: "Home & Office",
       submenu: [
-        {label: "HOME KITCHEN", id: "home-kitchen"},
-        {label: "OFFICE PRODUCTS", id: "office-products"},
-        {label: "HOME BRANDS", id: "home-brands"},
+        { label: "HOME KITCHEN", id: "home-kitchen" },
+        { label: "OFFICE PRODUCTS", id: "office-products" },
+        { label: "HOME BRANDS", id: "home-brands" },
       ],
     },
     {
       icon: faShirt,
       label: "Fashion",
       submenu: [
-        {label: "MEN'S FASHION", id: "mens-fashion"},
-        {label: "WOMEN'S FASHION", id: "womens-fashion"},
-        {label: "KID'S FASHION", id: "kids-fashion"},
+        { label: "MEN'S FASHION", id: "mens-fashion" },
+        { label: "WOMEN'S FASHION", id: "womens-fashion" },
+        { label: "KID'S FASHION", id: "kids-fashion" },
       ],
     },
     {
       icon: faComputer,
       label: "Computing",
       submenu: [
-        {label: "LAPTOPS", id: "laptops"},
-        {label: "COMPUTER COMPONENTS", id: "computer-components"},
-        {label: "COMPUTER & ACCESSORIES", id: "computer-acessories"},
+        { label: "LAPTOPS", id: "laptops" },
+        { label: "COMPUTER COMPONENTS", id: "computer-components" },
+        { label: "COMPUTER & ACCESSORIES", id: "computer-accessories" },
       ],
     },
     {
       icon: faAppleWhole,
       label: "Supermarket",
       submenu: [
-        {label: "FOOD CUPBOARD", id: "food-cupboard"},
-        {label: "DRINKS", id: "drinks"},
-        {label: "DRINKS BRANDS", id: "drinks-brands"},
-        {label: "HOUSEHOLD SUPPLIES", id: "household-supplies"}
+        { label: "FOOD CUPBOARD", id: "food-cupboard" },
+        { label: "DRINKS", id: "drinks" },
+        { label: "DRINKS BRANDS", id: "drinks-brands" },
+        { label: "HOUSEHOLD SUPPLIES", id: "household-supplies" },
       ],
     },
     {
       icon: faBaby,
       label: "Baby Products",
       submenu: [
-        {label: "FEEDING", id: "feeding"},
-        {label: "DIAPERING", id: "diapering"},
-        {label: "BABY SAFETY", id: "baby-safety"},
-        {label: "BABY & TODLER TOYS", id: "baby-toys"}
+        { label: "FEEDING", id: "feeding" },
+        { label: "DIAPERING", id: "diapering" },
+        { label: "BABY SAFETY", id: "baby-safety" },
+        { label: "BABY & TODDLER TOYS", id: "baby-toys" },
       ],
     },
     {
       icon: faBasketball,
       label: "Sporting Goods",
       submenu: [
-        {label: "SPORTS & FITNESS", id: "sports-fitness"},
-        {label: "SPORTS NUTRITION", id: "sports-nutrition"},
-        {label: "SPORTS BRANDS", id: "sports-brands"},
-        {label: "OUTDOOR RECREATION", id: "outdoor-recreation"}
+        { label: "SPORTS & FITNESS", id: "sports-fitness" },
+        { label: "SPORTS NUTRITION", id: "sports-nutrition" },
+        { label: "SPORTS BRANDS", id: "sports-brands" },
+        { label: "OUTDOOR RECREATION", id: "outdoor-recreation" },
       ],
     },
     {
       icon: faListDots,
       label: "Other categories",
       submenu: [
-        {label: "AUTOMOBILE", id: "automobile"},
-        {label: "GAMING", id: "gaming"},
-        {label: "GARDEN & OUTDOORS", id: "garden-outdoors"},
-        {label: "BOOKS, MOVIES & MUSIC", id: "movies-music"}
+        { label: "AUTOMOBILE", id: "automobile" },
+        { label: "GAMING", id: "gaming" },
+        { label: "GARDEN & OUTDOORS", id: "garden-outdoors" },
+        { label: "BOOKS, MOVIES & MUSIC", id: "movies-music" },
       ],
     },
   ];
@@ -183,54 +184,57 @@ const Banner = () => {
                 {category.label}
               </div>
               <FontAwesomeIcon icon={faAngleRight} />
-              {hoveredSubMenu === index &&
-                (isHoveringList || showPhoneAccessories || showHome) && (
-                  <div className="absolute top-0 left-full ml-2 w-auto text-xs bg-white shadow-lg rounded-md flex z-20">
-                    <ul className="flex text-black">
-                      {category.submenu.map((item, subIndex) => (
-                        <li
-                          key={subIndex}
-                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                          onMouseEnter={() => {
-                            if (item === "PHONE ACCESSORIES, HOME") {
-                              setShowPhoneAccessories(true);
-                            }
-                          }}
-                          onMouseLeave={() => {
-                            if (item === "PHONE ACCESSORIES") {
-                              setShowPhoneAccessories(false);
-                            }
-                          }}
-                        >
-                          <div className="whitespace-nowrap"> {item}</div>
-                          <hr className="my-1 border-gray-200" />
-                        </li>
-                      ))}
-                    </ul>
-                    {showPhoneAccessories && (
-                      <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
-                        <ul>
-                          <li>Samsung</li>
-                          <li>Tecno</li>
-                          <li>Infinix</li>
-                          <li>FreeYond</li>
-                          <li>Oraimo</li>
-                        </ul>
-                      </div>
-                    )}
-                       {showHome && (
-                      <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
-                        <ul>
-                          <li>Solarmax</li>
-                          <li>Nunix</li>
-                          <li>Annov</li>
-                          <li>Redberyy</li>
-                          <li>Miniso</li>
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                )}
+              {hoveredSubMenu === index && isHoveringList && (
+                <div className="absolute top-0 left-full ml-2 w-auto text-xs bg-white shadow-lg rounded-md flex z-20">
+                  <ul className="flex text-black">
+                    {category.submenu.map((item, subIndex) => (
+                      <li
+                        key={subIndex}
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                        onMouseEnter={() => {
+                          if (item.id === "phone-accessories") {
+                            setShowPhoneAccessories(true);
+                            setShowHome(false);
+                          } else if (item.id === "home") {
+                            setShowHome(true);
+                            setShowPhoneAccessories(false);
+                          }
+                        }}
+                        onMouseLeave={() => {
+                          setShowPhoneAccessories(false);
+                          setShowHome(false);
+                        }}
+                      >
+                        <div className="whitespace-nowrap"> {item.label}</div>
+                        <hr className="my-1 border-gray-200" />
+                      </li>
+                    ))}
+                  </ul>
+                  {showPhoneAccessories && (
+                    <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
+                      <ul>
+                        <li>Samsung</li>
+                        <li>Tecno</li>
+                        <li>Infinix</li>
+                        <li>FreeYond</li>
+                        <li>Oraimo</li>
+                      </ul>
+                    </div>
+                  )}
+                  {showHome && (
+                    <div className="absolute text-black top-full mt-2 w-full bg-gray-100 p-4 z-10">
+                      <ul>
+                        <li>Solarmax</li>
+                        <li>Nunix</li>
+                        <li>Annov</li>
+                        <li>Redberry</li>
+                        <li>Miniso</li>
+                      </ul>
+                    </div>
+                  )}
+                  
+                </div>
+              )}
             </li>
           ))}
         </ul>
