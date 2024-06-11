@@ -190,6 +190,17 @@ const Banner = () => {
         { label: "WOMEN'S FASHION", id: "womens-fashion" },
         { label: "KID'S FASHION", id: "kids-fashion" },
       ],
+      submenuProducts: {
+        "mens-fashion": [
+          "Shirts", "Shoes", "Suits & Sports Coats", "Jeans", "Underwear", "T-shirts & Tanks", "Pants"
+        ],
+        "womens-fashion": [
+          "Dresses", "Suits & Blazers", "Tops & Tees", "Coats, Jackets & Vests", "Jumpsuits, Rompers & Overalls"
+        ],
+        "kids-fashion": [
+          "Boys", "Girls"
+        ]
+      }
     },
     {
       icon: faComputer,
@@ -199,6 +210,17 @@ const Banner = () => {
         { label: "COMPUTER COMPONENTS", id: "computer-components" },
         { label: "COMPUTER & ACCESSORIES", id: "computer-accessories" },
       ],
+      submenuProducts: {
+        "laptops": [
+          "Netbooks", "Ultrabooks", "Notebooks"
+        ],
+        "computer-components": [
+          "Internal Hard Drive", "Graphics Cards", "Fans & Cooling", "CPU Processors"
+        ],
+        "computer-accessories": [
+          "Laptop Accessories", "Desktop", "Monitors", "Scanners", "Printers", "Keyboards, Mice & Accessories"
+        ],
+      }
     },
     {
       icon: faAppleWhole,
@@ -207,8 +229,18 @@ const Banner = () => {
         { label: "FOOD CUPBOARD", id: "food-cupboard" },
         { label: "DRINKS", id: "drinks" },
         { label: "DRINKS BRANDS", id: "drinks-brands" },
-        { label: "HOUSEHOLD SUPPLIES", id: "household-supplies" },
       ],
+      submenuProducts: {
+        "food-cupboard": [
+          "Cooking Ingredients", "Snacks, Crisps & Nuts", "Grains & Rice", "Sugar & Flour", "Breakfast Cereals"
+        ],
+        "drinks": [
+          "Beer, Wine & Spirits", "Carbonated Drinks", "Coffee, Tea & Cocoa", "Dairy", "Juices & Non Carbonated Drinks", "Water"
+        ],
+        "drinks-brands": [
+          "Jameson", "Tusker", "Barcadi", "Coca Cola", "Four Cousins"
+        ],
+      }
     },
     {
       icon: faBaby,
@@ -217,8 +249,18 @@ const Banner = () => {
         { label: "FEEDING", id: "feeding" },
         { label: "DIAPERING", id: "diapering" },
         { label: "BABY SAFETY", id: "baby-safety" },
-        { label: "BABY & TODDLER TOYS", id: "baby-toys" },
       ],
+      submenuProducts: {
+        "feeding": [
+          "Bibs & Burp Clothes", "Bottle-Feeding", "Breastfeeding", "Highchairs & Booster Seats"
+        ],
+        "diapering": [
+          "Diaper Bags", "Disposable Diapers", "Portable Changing Pads", "Cloth Diapers", "Changing Tables"
+        ],
+        "baby-safety": [
+          "Monitors", "Sleep Positioners", "Edge & Corner Guards"
+        ],
+      }
     },
     {
       icon: faBasketball,
@@ -227,8 +269,18 @@ const Banner = () => {
         { label: "SPORTS & FITNESS", id: "sports-fitness" },
         { label: "SPORTS NUTRITION", id: "sports-nutrition" },
         { label: "SPORTS BRANDS", id: "sports-brands" },
-        { label: "OUTDOOR RECREATION", id: "outdoor-recreation" },
       ],
+      submenuProducts: {
+        "sports-fitness": [
+          "Gymnastics Equipments", "Exercise & Fitness", "Team Sports", "Clothing", "Accessories"
+        ],
+        "sports-nutrition": [
+          "Carb Management Supplements", "Endurance & Energy", "Fat Burners & Thermogenics", "Supplements", "Post-Work & Recovery", "Pre-Workout"
+        ],
+        "sports-brands": [
+          "Nairobi Sports House", "Decathlon", "Reebok", "Adidas", "Puma", "Speedo", "Intex"
+        ],
+      }
     },
     {
       icon: faListDots,
@@ -237,8 +289,18 @@ const Banner = () => {
         { label: "AUTOMOBILE", id: "automobile" },
         { label: "GAMING", id: "gaming" },
         { label: "GARDEN & OUTDOORS", id: "garden-outdoors" },
-        { label: "BOOKS, MOVIES & MUSIC", id: "movies-music" },
       ],
+      submenuProducts: {
+        "automobile": [
+          "Car Electronics & Accessories", "Car Safety & Security", "Motorcycle & Powersports", "Lights & Lighting Accessories", "Replacement Parts"
+        ],
+        "gaming": [
+          "Playstation", "Digital Games", "Nintendo", "PC Gaming", "Sony PSP"
+        ],
+        "garden-outdoors": [
+          "Gardening & Lawn Care", "Grilling & Outdoor Cooking", "Outdoor Decor", "Patio Furniture & Accessories", "Farm & Ranch"
+        ],
+      }
     },
   ];
 
@@ -262,12 +324,12 @@ const Banner = () => {
                 {category.label}
               </div>
               {hoveredSubMenu === index && isHoveringList && (
-                <div className="absolute top-0 left-full ml-2 w-[50vw] max-w-[600px] text-xs bg-white shadow-lg rounded-md flex z-20">
-                  <ul className="flex text-black">
+                <div className="absolute top-0 left-full ml-2 w-[50vw] max-w-[800px] text-xs bg-white shadow-lg flex z-20">
+                  <ul className="flex text-black gap-5">
                     {category.submenu.map((item, subIndex) => (
                       <li
                         key={subIndex}
-                        className="px-4 py-2 hover:bg-gray-100 h-full cursor-pointer relative"
+                        className="px-4 py-2 hover:bg-gray-100 w-52 h-full cursor-pointer relative"
                       >
                         <div className="whitespace-nowrap"> {item.label}</div>
                         <hr className="my-1 border-gray-200" />
