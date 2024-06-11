@@ -329,7 +329,7 @@ const Banner = () => {
                     {category.submenu.map((item, subIndex) => (
                       <li
                         key={subIndex}
-                        className="px-4 py-2 hover:bg-gray-100 w-52 h-full cursor-pointer relative"
+                        className="px-4 py-2 hover:text-orange-500 w-52 h-full cursor-pointer relative"
                       >
                         <div className="whitespace-nowrap"> {item.label}</div>
                         <hr className="my-1 border-gray-200" />
@@ -337,7 +337,7 @@ const Banner = () => {
                           <ul >
                             {categories[index].submenuProducts[item.id].map(
                               (product, productIndex) => (
-                                <li className="mb-2" key={productIndex}>{product}</li>
+                                <li className="mb-2 text-black hover:font-bold" key={productIndex}>{product}</li>
                               )
                             )}
                           </ul>
