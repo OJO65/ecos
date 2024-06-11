@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../Assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,6 +15,8 @@ import {
 const Navbar = () => {
   const [showAccountDropdown, setShowAccountDropdown] = useState(false);
   const [showHelpDropdown, setShowHelpDropdown] = useState(false);
+  const accountDropdownRef = useRef(null);
+  const helpDropdownRef = useRef(null);
 
   const toggleAccountDropdown = () => {
     setShowAccountDropdown(!showAccountDropdown);
@@ -25,6 +27,28 @@ const Navbar = () => {
     setShowHelpDropdown(!showHelpDropdown);
     setShowAccountDropdown(false);
   };
+
+  const handleClickOutside = (event) => {
+    if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
+      setShowAccountDropdown(false);
+    }
+
+    if (helpDropdownRef.current && !helpDropdownRef.current.contains(event.target)) {
+      setShowHelpDropdown(false);
+    }
+  };
+
+  useEffect(() => {
+    if (showAccountDropdown || showHelpDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showAccountDropdown, showHelpDropdown]);
 
   return (
     <div className="bg-white md:flex items-center box-border shadow-md">
@@ -56,10 +80,11 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faAngleDown} className="left-2 top-3 m-2" />
         </div>
         {showAccountDropdown && (
-          <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center z-10">
+          <div ref={accountDropdownRef} className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center z-10">
             <button className="border p-2 rounded-md font-bold bg-orange-400 my-2">
               SIGN IN
             </button>
+            <hr className="my-1 border-gray-500" />
             <ul className="w-full">
               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
                 <FontAwesomeIcon icon={faUser} /> My Account
@@ -83,7 +108,7 @@ const Navbar = () => {
           Help <FontAwesomeIcon icon={faAngleDown} className="left-2 top-3 m-2" />
         </div>
         {showHelpDropdown && (
-          <div className="z-10 absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center">
+          <div ref={helpDropdownRef} className="z-10 absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center">
             <ul className="w-full flex flex-col items-center">
               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-center">
                 Help Center
@@ -104,6 +129,7 @@ const Navbar = () => {
                 Payment & Jumia Account
               </li>
             </ul>
+            <hr className="my-1 border-gray-500" />
             <button className="border p-2 rounded-md font-bold bg-orange-400 my-2 flex items-center justify-center">
               <FontAwesomeIcon icon={faComment} className="mr-2" /> LIVE CHAT
             </button>
