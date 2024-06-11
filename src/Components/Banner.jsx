@@ -14,7 +14,6 @@ import {
   faShirt,
   faShoppingBag,
   faTelevision,
-  faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
@@ -63,8 +62,8 @@ const Banner = () => {
           "FreeYond",
           "Oraimo",
         ],
-        "home": ["Solarmax", "Nunix", "Annov", "Redberry", "Miniso"],
-        "fashion": ["Adidas", "Nike", "Ecko Unltd", "Converse", "Puma"],
+        home: ["Solarmax", "Nunix", "Annov", "Redberry", "Miniso"],
+        fashion: ["Adidas", "Nike", "Ecko Unltd", "Converse", "Puma"],
       },
     },
     {
@@ -73,7 +72,7 @@ const Banner = () => {
       submenu: [
         { label: "MOBILE PHONES", id: "mobile-phones" },
         { label: "TABLETS", id: "tablets" },
-        { label: "ACCESSORIES & SUPPLIES", id: "accessories-supplies" },
+        { label: "ACCESSORIES", id: "accessories" },
       ],
       submenuProducts: {
         "mobile-phones": [
@@ -82,8 +81,21 @@ const Banner = () => {
           "Smartphones under 10k",
           "Feature Phones under 2k",
         ],
-        "tablets": ["Tablets", "Tablet Accessories", "Tablet Bags & Covers"],
-        "accessories-supplies": ["Accessories & Video Supplies", "Batteries", "Batteries, Chargers & Accessories", "Cables", "Power Protection"],
+        tablets: ["Tablets", "Tablet Accessories", "Tablet Bags & Covers"],
+        "accessories-supplies": [
+          "Accessories & Video Supplies",
+          "Batteries",
+          "Batteries, Chargers & Accessories",
+          "Cables",
+          "Power Protection",
+        ],
+        "accessories": [
+          "Smart Watches",
+          "Cases & Sleeves",
+          "Screen protectors",
+          "BlueTooth Accessories",
+          "Batteries & Battery Packs",
+        ],
       },
     },
     {
@@ -94,6 +106,21 @@ const Banner = () => {
         { label: "HOME AUDIO", id: "home-audio" },
         { label: "ACCESSORIES & SUPPLIES", id: "accessories-supplies" },
       ],
+      submenuProducts: {
+        "televisions": [
+          "Smart Tvs", "Digital Tvs"
+        ],
+        "home-audio": [
+          "Speakers", "Home Theatre Systems", "BlueTooth Speakers", "Sound Bars", "Compact Radios & Sterios" 
+        ],
+        "accessories-supplies": [
+          "Accessories & Video Supplies",
+          "Batteries",
+          "Batteries, Chargers & Accessories",
+          "Cables",
+          "Power Protection",
+        ],
+      }
     },
     {
       icon: faBlenderPhone,
@@ -103,6 +130,17 @@ const Banner = () => {
         { label: "SMALL APPLIANCES", id: "small-appliances" },
         { label: "COOKING APPLIANCES", id: "cooking-appliances" },
       ],
+      submenuProducts: {
+        "large-appliances": [
+          "Refrigirators", "Freezers", "Water dispensers & Coolers", "Washers & Driers"
+        ],
+        "small-appliances": [
+          "Blenders", "Toasters", "Keetles", "Ironing & Laundry"
+        ],
+        "cooking-appliances": [
+          "Cook Tops", "Microwaves & Ovens", "Cookers", "Cooking Appliances Accessories"
+        ],
+      }
     },
     {
       icon: faMedkit,
@@ -112,6 +150,17 @@ const Banner = () => {
         { label: "MAKE UP", id: "makeup" },
         { label: "HEALTH & WELLNESS", id: "health-wellness" },
       ],
+      submenuProducts: {
+        "facial-skin-care": [
+          "Moisturizers", "Cleansers", "Masks", "Toners", "Sun Care"
+        ],
+        "makeup": [
+          "Face", "Eyes", "Lips", "Tools & Brushes", "Make up kits & Combs"
+        ],
+        "health-wellness": [
+          "Health Suppliments", "Sports Nutrition", "Feminine Care", "Sexual Wellness"
+        ],
+      }
     },
     {
       icon: faHome,
@@ -121,6 +170,17 @@ const Banner = () => {
         { label: "OFFICE PRODUCTS", id: "office-products" },
         { label: "HOME BRANDS", id: "home-brands" },
       ],
+      submenuProducts: {
+        "home-kitchen": [
+          "Home Decor", "Bedding", "Wall Art", "Bath", "Lighting", "Storage & Organization", "Kitchen Dining", "Furniture"
+        ],
+        "office-products": [
+          "Office & School Supplies", "Office Electronics", "Office Furniture & Lighting", "Stationary"
+        ],
+        "home-brands": [
+          "Rashnik", "SolarMax", "Nunix", "Annov", "Redberry", "Miniso", "Superfoam"
+        ],
+      }
     },
     {
       icon: faShirt,
@@ -202,7 +262,7 @@ const Banner = () => {
                 {category.label}
               </div>
               {hoveredSubMenu === index && isHoveringList && (
-                <div className="absolute top-0 left-full ml-2 w-auto text-xs bg-white shadow-lg rounded-md flex z-20">
+                <div className="absolute top-0 left-full ml-2 w-[50vw] max-w-[600px] text-xs bg-white shadow-lg rounded-md flex z-20">
                   <ul className="flex text-black">
                     {category.submenu.map((item, subIndex) => (
                       <li
@@ -212,10 +272,10 @@ const Banner = () => {
                         <div className="whitespace-nowrap"> {item.label}</div>
                         <hr className="my-1 border-gray-200" />
                         <div>
-                          <ul>
+                          <ul >
                             {categories[index].submenuProducts[item.id].map(
                               (product, productIndex) => (
-                                <li key={productIndex}>{product}</li>
+                                <li className="mb-2" key={productIndex}>{product}</li>
                               )
                             )}
                           </ul>
