@@ -1,16 +1,29 @@
 import './App.css';
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
+import Login from './Components/Login';
+
 function App() {
+  const location = useLocation();
+const isLoginPage = location.pathname === '/Login'
   return (
-    <div>
-      <BrowserRouter>
-      <Navbar />
-      <Banner />
-      </BrowserRouter>
+    <div style={{ backgroundColor: isLoginPage ? 'white' : 'orange', height: '100vh'}}>
+         {!isLoginPage && <Navbar />}
+         {!isLoginPage && <Banner />}
+      <Routes>
+        <Route path="/Login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
 
-export default App;
+function AppWrapper() {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}
+
+export default AppWrapper;
