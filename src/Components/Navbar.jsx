@@ -49,6 +49,10 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [showAccountDropdown, showHelpDropdown]);
+  const handleSignInClick = () => {
+    window.location.href = "/Login";
+  };
+  
 
   return (
     <div className="bg-white md:flex items-center box-border shadow-md">
@@ -81,7 +85,7 @@ const Navbar = () => {
         </div>
         {showAccountDropdown && (
           <div ref={accountDropdownRef} className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center z-10">
-            <button className="border p-2 rounded-md font-bold bg-orange-400 my-2">
+            <button className="border p-2 rounded-md font-bold bg-orange-400 my-2" onClick={handleSignInClick}>
               SIGN IN
             </button>
             <hr className="my-1 border-gray-500" />
