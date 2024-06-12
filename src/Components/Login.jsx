@@ -10,9 +10,9 @@ const Login = () => {
       <h1 className="font-bold text-xl p-2 relative block text-center">
         Welcome To Jumia
       </h1>
-      <p className=" text-xl font-thin mt-[8px] mr-[400px] mb-[16px] ml-[400px] block text-center">
+      <h2 className=" text-sm mt-[8px] mr-[500px] mb-[16px] ml-[500px] block text-center">
         Type your e-mail or phone number to log in or create a Jumia account.
-      </p>
+      </h2>
       <div className="w-[432px] relative mr-auto ml-auto">
         <input
           type="text"
