@@ -56,13 +56,13 @@ const Carousel = () => {
         {carouselItems.map((item, index) => (
           <div key={index} className="p-2 flex-shrink-0">
             <a
-              className="block rounded-lg hover:shadow-lg"
+              className="block rounded-md hover:shadow-md"
               href={item.href}
               data-track-onclick="eecPromo"
             >
               <div className="aspect-w-1 aspect-h-1 w-[120px]">
                 <img
-                  className="rounded-lg"
+                  className="rounded-md"
                   src={item.imgSrc}
                   alt={item.alt}
                 />
