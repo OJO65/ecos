@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react';
 import gifscroll from "../Assets/img/gifscroll.gif";
 import flash from "../Assets/img/FlashSaleLP.png";
 import free from "../Assets/img/Freedelivery.png";
@@ -11,6 +11,8 @@ import small from "../Assets/img/SmallAppliances.png";
 import homeoffice from "../Assets/img/HomeOffice.png";
 import computing from "../Assets/img/Computing.png";
 import mens from "../Assets/img/MenFashion.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Carousel = () => {
   const carouselItems = [
@@ -28,9 +30,29 @@ const Carousel = () => {
     { href: "https://www.jumia.co.ke/mens-fashion/", imgSrc: mens, alt: "Men's Fashion" },
   ];
 
+  const carouselRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: -120,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: 120,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <div className="relative w-full flex overflow-hidden items-center">
-      <div className="flex space-x-4">
+    <div className="relative w-full flex overflow-hidden items-center bg-white">
+      <div ref={carouselRef} className="flex -space-x-1 overflow-x-scroll no-scrollbar">
         {carouselItems.map((item, index) => (
           <div key={index} className="p-2 flex-shrink-0">
             <a
@@ -38,7 +60,7 @@ const Carousel = () => {
               href={item.href}
               data-track-onclick="eecPromo"
             >
-              <div className="aspect-w-1 aspect-h-1">
+              <div className="aspect-w-1 aspect-h-1 w-[120px]">
                 <img
                   className="rounded-lg"
                   src={item.imgSrc}
@@ -49,15 +71,19 @@ const Carousel = () => {
           </div>
         ))}
       </div>
-      <button type="button" className="absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300">
-        <svg viewBox="0 0 24 24" className="w-6 h-6">
-          <use xlinkHref="https://www.jumia.co.ke/assets_he/images/i-icons.995b8ca3.svg#arrow-left"></use>
-        </svg>
+      <button 
+        type="button" 
+        className="absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        onClick={scrollLeft}
+      >
+        <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4 text-gray-600" />
       </button>
-      <button type="button" className="absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300">
-        <svg viewBox="0 0 24 24" className="w-6 h-6">
-          <use xlinkHref="https://www.jumia.co.ke/assets_he/images/i-icons.995b8ca3.svg#arrow-right"></use>
-        </svg>
+      <button 
+        type="button" 
+        className="absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        onClick={scrollRight}
+      >
+        <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4 text-gray-600" />
       </button>
     </div>
   )
