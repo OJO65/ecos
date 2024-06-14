@@ -52,7 +52,7 @@ const Carousel = () => {
 
   return (
     <div className="relative w-full flex overflow-hidden items-center bg-white">
-      <div ref={carouselRef} className="flex -space-x-1 overflow-x-scroll no-scrollbar">
+      <div ref={carouselRef} className="flex -space-x-1 overflow-x-hidden no-scrollbar">
         {carouselItems.map((item, index) => (
           <div key={index} className="p-2 flex-shrink-0">
             <a

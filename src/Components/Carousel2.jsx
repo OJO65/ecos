@@ -15,7 +15,7 @@ import annov from "../Assets/img/annovMixer.jpg";
 import vision from "../Assets/img/visionPlusTv.jpg";
 import amtec from "../Assets/img/amtecTv.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Carousel2 = () => {
   const carouselItems = [
@@ -58,21 +58,21 @@ const Carousel2 = () => {
 
   return (
     <div className="relative w-full flex flex-col bg-white">
-      <header className="flex flex-row space-x-[1100px] mr-auto ml-auto -mh-48px" style={{ background: '#FFFFFF' }}>
+      <header className="flex flex-row space-x-[1100px] mr-auto ml-auto" style={{ background: '#FFFFFF' }}>
         <div className="cola -df -i-ctr -oh">
-          <h2 className="-m -fs20 -elli">Top selling items</h2>
+          <h2 className="font-semibold text-lg">Top selling items</h2>
         </div>
         <div className="col -df -j-end -fsh0">
-          <a href="/recommended/" className=" underline text-orange-600">
-          See All
-          <FontAwesomeIcon icon={faArrowRight} className='ml-1' />
+          <a href="/recommended/" className="underline text-orange-500">
+            See All
+            <FontAwesomeIcon icon={faAngleRight} className='ml-2' />
             <svg viewBox="0 0 24 24" className="ic -f-or5" width="24" height="24">
               <use xlinkHref="https://www.jumia.co.ke/assets_he/images/i-icons.995b8ca3.svg#arrow-right"></use>
             </svg>
           </a>
         </div>
       </header>
-      <div ref={carouselRef} className="flex -space-x-1 overflow-x-scroll no-scrollbar">
+      <div ref={carouselRef} className="flex -space-x-1 overflow-hidden no-scrollbar">
         {carouselItems.map((item, index) => (
           <div key={index} className="p-2 flex-shrink-0">
             <a
@@ -93,14 +93,14 @@ const Carousel2 = () => {
       </div>
       <button 
         type="button" 
-        className="mt-24 absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        className=" mt-24 absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
         onClick={scrollLeft}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4 text-gray-600" />
       </button>
       <button 
         type="button" 
-        className="mt-24 absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        className=" mt-24 absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
         onClick={scrollRight}
       >
         <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4 text-gray-600" />

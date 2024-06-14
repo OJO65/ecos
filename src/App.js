@@ -13,7 +13,7 @@ const isLoginPage = location.pathname === '/Login'
     <div style={{ backgroundColor: isLoginPage ? 'white' : 'orange', height: '100vh'}}>
          {!isLoginPage && <Navbar />}
          {!isLoginPage && <Banner />}
-         {!isLoginPage && <div style={{ marginBottom: '5px' }}><Carousel /></div>}
+         {!isLoginPage && <div style={{ marginBottom: '25px' }}><Carousel /></div>}
          {!isLoginPage && <Carousel2 />}
       <Routes>
         <Route path="/Login" element={<Login />} />
