@@ -15,7 +15,7 @@ function App() {
       {!isLoginPage && <Navbar />}
       {!isLoginPage && <Banner />}
       {!isLoginPage && <div className="mb-6"><Carousel /></div>}
-      {!isLoginPage && <div className="mt-6"><Carousel2 /></div>}
+      {!isLoginPage && <div className='mr-[20px] ml-[20px] bg-orange-500 rounded-md'><Carousel2 /></div>}
       <Routes>
         <Route path="/Login" element={<Login />} />
       </Routes>

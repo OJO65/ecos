@@ -57,8 +57,8 @@ const Carousel2 = () => {
   };
 
   return (
-    <div className="relative w-full flex flex-col bg-white box-border shadow-lg">
-      <header className="flex flex-row space-x-[1130px] -mt-10" style={{ background: '#FFFFFF' }}>
+    <div className="relative flex flex-col bg-white box-border shadow-lg rounded-md">
+      <header className="flex flex-row space-x-[1080px] rounded-md" style={{ background: '#FFFFFF' }}>
         <div>
           <h2 className="font-semibold text-lg ml-3">Top selling items</h2>
         </div>
@@ -93,14 +93,14 @@ const Carousel2 = () => {
       </div>
       <button 
         type="button" 
-        className=" mt-16 absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        className=" mt-24 absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
         onClick={scrollLeft}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4 text-gray-600" />
       </button>
       <button 
         type="button" 
-        className=" mt-16 absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        className=" mt-24 absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
         onClick={scrollRight}
       >
         <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4 text-gray-600" />
