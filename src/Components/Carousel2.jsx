@@ -57,15 +57,15 @@ const Carousel2 = () => {
   };
 
   return (
-    <div className="relative w-full flex flex-col bg-white">
-      <header className="flex flex-row space-x-[1100px] mr-auto ml-auto" style={{ background: '#FFFFFF' }}>
-        <div className="cola -df -i-ctr -oh">
-          <h2 className="font-semibold text-lg">Top selling items</h2>
+    <div className="relative w-full flex flex-col bg-white box-border shadow-lg">
+      <header className="flex flex-row space-x-[1130px] -mt-10" style={{ background: '#FFFFFF' }}>
+        <div>
+          <h2 className="font-semibold text-lg ml-3">Top selling items</h2>
         </div>
-        <div className="col -df -j-end -fsh0">
-          <a href="/recommended/" className="underline text-orange-500">
+        <div>
+          <a href="/recommended/" className="underline text-orange-500 mr-3">
             See All
-            <FontAwesomeIcon icon={faAngleRight} className='ml-2' />
+            <FontAwesomeIcon icon={faAngleRight} className='ml-1' />
             <svg viewBox="0 0 24 24" className="ic -f-or5" width="24" height="24">
               <use xlinkHref="https://www.jumia.co.ke/assets_he/images/i-icons.995b8ca3.svg#arrow-right"></use>
             </svg>
@@ -93,14 +93,14 @@ const Carousel2 = () => {
       </div>
       <button 
         type="button" 
-        className=" mt-24 absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        className=" mt-16 absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
         onClick={scrollLeft}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4 text-gray-600" />
       </button>
       <button 
         type="button" 
-        className=" mt-24 absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        className=" mt-16 absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
         onClick={scrollRight}
       >
         <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4 text-gray-600" />

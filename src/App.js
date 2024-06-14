@@ -8,13 +8,14 @@ import Carousel2 from './Components/Carousel2';
 
 function App() {
   const location = useLocation();
-const isLoginPage = location.pathname === '/Login'
+  const isLoginPage = location.pathname === '/Login';
+
   return (
-    <div style={{ backgroundColor: isLoginPage ? 'white' : 'orange', height: '100vh'}}>
-         {!isLoginPage && <Navbar />}
-         {!isLoginPage && <Banner />}
-         {!isLoginPage && <div style={{ marginBottom: '25px' }}><Carousel /></div>}
-         {!isLoginPage && <Carousel2 />}
+    <div className={`h-full ${isLoginPage ? 'bg-white' : 'bg-orange-500'}`}>
+      {!isLoginPage && <Navbar />}
+      {!isLoginPage && <Banner />}
+      {!isLoginPage && <div className="mb-6"><Carousel /></div>}
+      {!isLoginPage && <div className="mt-6"><Carousel2 /></div>}
       <Routes>
         <Route path="/Login" element={<Login />} />
       </Routes>
