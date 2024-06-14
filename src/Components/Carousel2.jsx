@@ -58,7 +58,7 @@ const Carousel2 = () => {
 
   return (
     <div className="relative flex flex-col bg-white box-border shadow-lg rounded-md">
-      <header className="flex flex-row space-x-[1080px] rounded-md" style={{ background: '#FFFFFF' }}>
+      <header className="flex flex-row space-x-[1080px] rounded-md -mb-10" style={{ background: '#FFFFFF' }}>
         <div>
           <h2 className="font-semibold text-lg ml-3">Top selling items</h2>
         </div>
