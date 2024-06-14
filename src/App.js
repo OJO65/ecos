@@ -11,7 +11,7 @@ function App() {
   const isLoginPage = location.pathname === '/Login';
 
   return (
-    <div className={`h-full ${isLoginPage ? 'bg-white' : 'bg-orange-500'}`}>
+    <div className={`h-full ${isLoginPage ? 'bg-white' : ''}`}>
       {!isLoginPage && <Navbar />}
       {!isLoginPage && <Banner />}
       {!isLoginPage && <div className="mb-6"><Carousel /></div>}

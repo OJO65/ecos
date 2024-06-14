@@ -19,21 +19,21 @@ import { faAngleRight, faArrowLeft, faArrowRight } from '@fortawesome/free-solid
 
 const Carousel2 = () => {
   const carouselItems = [
-    { href: "https://www.jumia.co.ke/", imgSrc: vitronTv, alt: "Vitron TV" },
-    { href: "https://www.jumia.co.ke/", imgSrc: hikersTv, alt: "Hikers TV" },
-    { href: "https://www.jumia.co.ke/", imgSrc: infinixHot, alt: "Infinix Hot" },
-    { href: "https://www.jumia.co.ke/", imgSrc: vitronRadio, alt: "Vitron Radio" },
-    { href: "https://www.jumia.co.ke/", imgSrc: villaonPhone, alt: "Villaon Phone" },
-    { href: "https://www.jumia.co.ke/", imgSrc: samsungPhone, alt: "Samsung Phone" },
-    { href: "https://www.jumia.co.ke/", imgSrc: hikers43, alt: "Hikers 43 TV" },
-    { href: "https://www.jumia.co.ke/", imgSrc: ailyonsKettle, alt: "Ailyons Kettle" },
-    { href: "https://www.jumia.co.ke/", imgSrc: skyworthTv, alt: "Skyworth TV" },
-    { href: "https://www.jumia.co.ke/", imgSrc: samsungGalaxy, alt: "Samsung Galaxy" },
-    { href: "https://www.jumia.co.ke/", imgSrc: nivea, alt: "Nivea" },
-    { href: "https://www.jumia.co.ke/", imgSrc: starlink, alt: "Starlink Standard" },
-    { href: "https://www.jumia.co.ke/", imgSrc: annov, alt: "Annov Mixer" },
-    { href: "https://www.jumia.co.ke/", imgSrc: vision, alt: "Vision Plus TV" },
-    { href: "https://www.jumia.co.ke/", imgSrc: amtec, alt: "Amtec TV" },
+    { href: "https://www.jumia.co.ke/", imgSrc: vitronTv, Newprice: "Ksh 11,599", Oldprice: "Ksh 18,069", discount: "-36%", alt: "Vitron TV" },
+    { href: "https://www.jumia.co.ke/", imgSrc: hikersTv, Newprice: "Ksh 11,299", Oldprice: "Ksh 20,168", discount: "-44%", alt: "Hikers TV" },
+    { href: "https://www.jumia.co.ke/", imgSrc: infinixHot, Newprice: "Ksh 13,599", Oldprice: "Ksh 20,000", discount: "-32%", alt: "Infinix Hot" },
+    { href: "https://www.jumia.co.ke/", imgSrc: vitronRadio, Newprice: "Ksh 5,460", Oldprice: "Ksh 7,599", discount: "-28%", alt: "Vitron Radio" },
+    { href: "https://www.jumia.co.ke/", imgSrc: villaonPhone, Newprice: "Ksh 6,288", Oldprice: "Ksh 7,999", discount: "-21%",  alt: "Villaon Phone" },
+    { href: "https://www.jumia.co.ke/", imgSrc: samsungPhone, Newprice: "Ksh 13,398", Oldprice: "Ksh 13,990", discount: "-4%", alt: "Samsung Phone" },
+    { href: "https://www.jumia.co.ke/", imgSrc: hikers43, Newprice: "Ksh 11,550", Oldprice: "Ksh 15,995", discount: "-28%", alt: "Hikers 43 TV" },
+    { href: "https://www.jumia.co.ke/", imgSrc: ailyonsKettle, Newprice: "Ksh 500", Oldprice: "Ksh 620", discount: "-5%", alt: "Ailyons Kettle" },
+    { href: "https://www.jumia.co.ke/", imgSrc: skyworthTv, Newprice: "Ksh 11,299", Oldprice: "Ksh 20,168", discount: "-44%", alt: "Skyworth TV" },
+    { href: "https://www.jumia.co.ke/", imgSrc: samsungGalaxy, Newprice: "Ksh 15,460", Oldprice: "Ksh 27,599", discount: "-36%", alt: "Samsung Galaxy" },
+    { href: "https://www.jumia.co.ke/", imgSrc: nivea, Newprice: "Ksh 764", Oldprice: "Ksh 1,000", discount: "-58%", alt: "Nivea" },
+    { href: "https://www.jumia.co.ke/", imgSrc: starlink, Newprice: "Ksh 45,500", Oldprice: "Ksh 100,000", discount: "-55%", alt: "Starlink Standard" },
+    { href: "https://www.jumia.co.ke/", imgSrc: annov, Newprice: "Ksh 8,460", Oldprice: "Ksh 17,599", discount: "-36%", alt: "Annov Mixer" },
+    { href: "https://www.jumia.co.ke/", imgSrc: vision, Newprice: "Ksh 45,460", Oldprice: "Ksh 27,599", discount: "-36%", alt: "Vision Plus TV" },
+    { href: "https://www.jumia.co.ke/", imgSrc: amtec, Newprice: "Ksh 65,460", Oldprice: "Ksh 37,599", discount: "-36%", alt: "Amtec TV" },
   ];
 
   const carouselRef = useRef(null);
@@ -63,8 +63,8 @@ const Carousel2 = () => {
           <h2 className="font-semibold text-lg ml-3">Top selling items</h2>
         </div>
         <div>
-          <a href="/recommended/" className="underline text-orange-500 mr-3">
-            See All
+          <a href="/recommended/" className="font-semibold underline text-orange-500 mr-3">
+            SEE ALL
             <FontAwesomeIcon icon={faAngleRight} className='ml-1' />
             <svg viewBox="0 0 24 24" className="ic -f-or5" width="24" height="24">
               <use xlinkHref="https://www.jumia.co.ke/assets_he/images/i-icons.995b8ca3.svg#arrow-right"></use>
@@ -80,12 +80,17 @@ const Carousel2 = () => {
               href={item.href}
               data-track-onclick="eecPromo"
             >
-              <div className="aspect-w-1 aspect-h-1 w-[120px]">
+              <div className="aspect-w-1 aspect-h-1 w-[120px] relative">
                 <img
                   className="rounded-lg"
                   src={item.imgSrc}
                   alt={item.alt}
                 />
+                <span className='absolute -top-3 ml-24 text-red-600 border bg-slate-200'>{item.discount}</span>
+              </div>
+              <div className="text-center mt-2">
+                <p className="text-md text-gray-600 font-bold">{item.Newprice}</p>
+                <p className="text-sm text-gray-400 line-through">{item.Oldprice}</p>
               </div>
             </a>
           </div>
@@ -93,14 +98,14 @@ const Carousel2 = () => {
       </div>
       <button 
         type="button" 
-        className=" mt-24 absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        className=" mt-20 absolute left-0 ml-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
         onClick={scrollLeft}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4 text-gray-600" />
       </button>
       <button 
         type="button" 
-        className=" mt-24 absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
+        className=" mt-20 absolute right-0 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
         onClick={scrollRight}
       >
         <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4 text-gray-600" />

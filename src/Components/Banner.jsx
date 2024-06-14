@@ -306,11 +306,11 @@ const Banner = () => {
 
   return (
     <div
-      className="md:flex hidden m-2 bg-orange-600 rounded-md relative"
+      className="md:flex hidden m-2 rounded-md relative"
       onMouseEnter={() => setIsHoveringList(true)}
       onMouseLeave={() => setIsHoveringList(false)}
     >
-      <div className="border md:w-1/6 w-96 m-5 p-2 text-sm rounded-md bg-white h-[384px] relative">
+      <div className="md:w-1/6 w-96 m-5 p-2 text-sm rounded-md bg-white h-[384px] relative">
         <ul className="p-1 h-full">
           {categories.map((category, index) => (
             <li
@@ -352,7 +352,7 @@ const Banner = () => {
         </ul>
       </div>
 
-      <div className="md:m-5 border border-orange-700 rounded-md flex-grow-0 flex-shrink-0 md:w-[712px] w-[400px] h-[384px] relative overflow-hidden flex items-center justify-center">
+      <div className="md:m-5 rounded-md flex-grow-0 flex-shrink-0 md:w-[712px] w-[400px] h-[384px] relative overflow-hidden flex items-center justify-center">
         <img
           src={gifs[currentGifIndex]}
           alt={`GIF ${currentGifIndex + 1}`}

@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 #root {
-    background-color: orange;
+    background-image: url(./Assets/img/bg.jpg) ;
     height: 1000vh;
+    background-size: contain;
+    background-repeat: repeat;
 }
 
