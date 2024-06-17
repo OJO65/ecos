@@ -38,7 +38,7 @@ const BaseProductCarousel = ({
     <div className="relative flex flex-col bg-white box-border shadow-lg rounded-md">
       <header
         className={`flex justify-between items-center p-3 rounded-t-md ${
-          redBackground ? "bg-red-500" : ""
+          redBackground ? "bg-red-600" : ""
         }`}
       >
         <h2 className="font-semibold text-lg ml-5">{title}</h2>
