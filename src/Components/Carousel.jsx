@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import BaseCarousel from './BaseCarousel';
 import gifscroll from "../Assets/img/gifscroll.gif";
 import flash from "../Assets/img/FlashSaleLP.png";
 import free from "../Assets/img/Freedelivery.png";
@@ -11,8 +12,6 @@ import small from "../Assets/img/SmallAppliances.png";
 import homeoffice from "../Assets/img/HomeOffice.png";
 import computing from "../Assets/img/Computing.png";
 import mens from "../Assets/img/MenFashion.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Carousel = () => {
   const carouselItems = [
@@ -30,63 +29,15 @@ const Carousel = () => {
     { href: "https://www.jumia.co.ke/mens-fashion/", imgSrc: mens, alt: "Men's Fashion" },
   ];
 
-  const carouselRef = useRef(null);
-
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({
-        left: -120,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({
-        left: 120,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  return (
-    <div className="relative flex overflow-hidden items-center bg-white box-border shadow-lg mr-[20px] ml-[20px] rounded-md">
-      <div ref={carouselRef} className="flex -space-x-2 overflow-x-hidden no-scrollbar ml-10 mr-10">
-        {carouselItems.map((item, index) => (
-          <div key={index} className="p-2 flex-shrink-0">
-            <a
-              className="block rounded-md hover:shadow-md"
-              href={item.href}
-              data-track-onclick="eecPromo"
-            >
-              <div className="aspect-w-1 aspect-h-1 w-[120px]">
-                <img
-                  className="rounded-md"
-                  src={item.imgSrc}
-                  alt={item.alt}
-                />
-              </div>
-            </a>
-          </div>
-        ))}
+  const renderItem = (item) => (
+    <a className="block rounded-md hover:shadow-md" href={item.href} data-track-onclick="eecPromo">
+      <div className="aspect-w-1 aspect-h-1 w-[120px]">
+        <img className="rounded-md" src={item.imgSrc} alt={item.alt} />
       </div>
-      <button 
-        type="button" 
-        className="absolute left-0 ml-2 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
-        onClick={scrollLeft}
-      >
-        <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4 text-gray-600" />
-      </button>
-      <button 
-        type="button" 
-        className="absolute right-0 ml-2 mr-2 p-2 bg-gray-200 rounded-full hover:bg-gray-300"
-        onClick={scrollRight}
-      >
-        <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4 text-gray-600" />
-      </button>
-    </div>
-  )
-}
+    </a>
+  );
+
+  return <BaseCarousel items={carouselItems} itemRenderer={renderItem} />;
+};
 
 export default Carousel;

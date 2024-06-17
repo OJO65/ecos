@@ -4,8 +4,7 @@ import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
 import Login from './Components/Login';
 import Carousel from './Components/Carousel';
-import Carousel2 from './Components/Carousel2';
-import Carousel3 from './Components/Carousel3'; // Import Carousel3 component
+import Carousel2 from './Components/Carousel2.jsx';
 
 function App() {
   const location = useLocation();
@@ -17,7 +16,7 @@ function App() {
       {!isLoginPage && <Banner />}
       {!isLoginPage && <div className="mb-6"><Carousel /></div>}
       {!isLoginPage && <div className='mr-[20px] ml-[20px] bg-orange-500 rounded-md'><Carousel2 /></div>}
-      {!isLoginPage && <div className='mt-6'><Carousel3 /></div>} {/* Add Carousel3 component here */}
+      
       <Routes>
         <Route path="/Login" element={<Login />} />
       </Routes>
