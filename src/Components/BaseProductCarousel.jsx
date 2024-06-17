@@ -1,9 +1,10 @@
-// components/BaseProductCarousel.js
+// BaseProductCarousel.js
+
 import React, { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-const BaseProductCarousel = ({ title, link, items, itemRenderer }) => {
+const BaseProductCarousel = ({ title, link, items, itemRenderer, redBackground, textwhite }) => {
   const carouselRef = useRef(null);
 
   const scrollLeft = () => {
@@ -26,9 +27,9 @@ const BaseProductCarousel = ({ title, link, items, itemRenderer }) => {
 
   return (
     <div className="relative flex flex-col bg-white box-border shadow-lg rounded-md">
-      <header className="flex justify-between items-center p-3 bg-white rounded-t-md">
+      <header className={`flex justify-between items-center p-3 rounded-t-md ${redBackground ? 'bg-red-500' : ''}`}>
         <h2 className="font-semibold text-lg ml-5">{title}</h2>
-        <a href={link} className="font-semibold underline text-orange-500">
+        <a href={link} className={`font-semibold underline text-orange-500 ${textwhite ? 'text-white' : ''}`}>
           SEE ALL
           <FontAwesomeIcon icon={faAngleRight} className="ml-1" />
         </a>

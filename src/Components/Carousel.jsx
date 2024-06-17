@@ -30,7 +30,7 @@ const Carousel = () => {
   ];
 
   const renderItem = (item) => (
-    <a className="block rounded-md hover:shadow-md" href={item.href} data-track-onclick="eecPromo">
+    <a className="block rounded-lg shadow-lg hover:shadow-md" href={item.href} data-track-onclick="eecPromo">
       <div className="aspect-w-1 aspect-h-1 w-[120px]">
         <img className="rounded-md" src={item.imgSrc} alt={item.alt} />
       </div>
