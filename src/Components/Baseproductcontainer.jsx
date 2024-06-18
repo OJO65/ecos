@@ -8,4 +8,4 @@ const Baseproductcontainer = () => {
   )
 }
 
-export default Baseproductcontainer
+export default Baseproductcontainer;
