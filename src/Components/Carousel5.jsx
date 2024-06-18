@@ -14,23 +14,57 @@ import Computing from '../Assets/img/halfprice/Computing.png';
 
 const Carousel5 = () => {
   const items = [
-    Phones,
-    Tvs,
-    LargeAppliances,
-    Beauty,
-    Women,
-    Men,
-    HomeAudio,
-    Sports,
-    SmallAppliances,
-    Grocery,
-    Computing,
+    {
+      imgSrc: Phones,
+      Name: "Phones & Tablets",
+    },
+    {
+      imgSrc: Tvs,
+      Name: "Electronics",
+    },
+    {
+      imgSrc: LargeAppliances,
+      Name: "Large Appliances",
+    },
+    {
+      imgSrc: Beauty,
+      Name: "Beauty",
+    },
+    {
+      imgSrc: Women,
+      Name: "Women's Fashion",
+    },
+    {
+      imgSrc: Men,
+      Name: "Men's Fashion",
+    },
+    {
+      imgSrc: HomeAudio,
+      Name: "Home Audio",
+    },
+    {
+      imgSrc: Sports,
+      Name: "Sports & Fitness",
+    },
+    {
+      imgSrc: SmallAppliances,
+      Name: "Small Appliances"
+    },
+    {
+      imgSrc: Grocery,
+      Name: "Groceries",
+    },
+    {
+      imgSrc: Computing,
+      Name: "Computing"
+    },
   ];
 
   const itemRenderer = (item) => (
-    
-    <img src={item} alt="carousel item" className="w-[120px] h-auto rounded-md" />
-    
+    <div>
+    <img src={item.imgSrc} alt="carousel item" className="w-[120px] h-auto rounded-md" />
+    <p className="text-md text-center font-semibold text-gray-600">{item.Name}</p>
+    </div>
   );
 
   return (
