@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import wash from '../Assets/img/productcontainer/wash.jpg';
 import mobile from '../Assets/img/productcontainer/mobileaccessories.jpg';
 import small from '../Assets/img/productcontainer/smallappliances.jpg';
@@ -14,59 +14,52 @@ import garnier from '../Assets/img/productcontainer/vitaminc.jpg';
 import Baseproductcontainer from './Baseproductcontainer';
 
 const Productcontainer = () => {
-  productitems = [
+  const productitems = [
     {
-      imgSrc: wash
+      imgSrc: wash,
     },
     {
-      imgSrc: mobile
+      imgSrc: mobile,
     },
     {
-      imgSrc: small
+      imgSrc: small,
     },
     {
-      imgSrc: light
+      imgSrc: light,
     },
     {
-      imgSrc: mens
+      imgSrc: mens,
     },
     {
-      imgSrc: booze
+      imgSrc: booze,
     },
     {
-      imgSrc: sonar
+      imgSrc: sonar,
     },
     {
-      imgSrc: wktv
+      imgSrc: wktv,
     },
     {
-      imgSrc: roch
+      imgSrc: roch,
     },
     {
-      imgSrc: hikers
+      imgSrc: hikers,
     },
     {
-      imgSrc: xiomi
+      imgSrc: xiomi,
     },
     {
-      imgSrc: garnier
+      imgSrc: garnier,
     },
   ];
 
-    const renderItem = (item) => (
-        <div>
-          <img src={item.imgSrc} />
-        </div>
-    );
-
-  return (
+  const renderItem = (item) => (
     <div>
-      
+      <img src={item.imgSrc} alt="Product" />
     </div>
   );
 
-  return <Baseproductcontainer />
-
-}
+  return <Baseproductcontainer items={productitems} itemRenderer={renderItem} />;
+};
 
 export default Productcontainer;
