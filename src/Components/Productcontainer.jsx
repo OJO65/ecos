@@ -11,13 +11,62 @@ import roch from '../Assets/img/productcontainer/rochfridge.jpg';
 import hikers from '../Assets/img/productcontainer/hikerstv.jpg';
 import xiomi from '../Assets/img/productcontainer/xiaomiredmi.jpg';
 import garnier from '../Assets/img/productcontainer/vitaminc.jpg';
+import Baseproductcontainer from './Baseproductcontainer';
 
 const Productcontainer = () => {
+  productitems = [
+    {
+      imgSrc: wash
+    },
+    {
+      imgSrc: mobile
+    },
+    {
+      imgSrc: small
+    },
+    {
+      imgSrc: light
+    },
+    {
+      imgSrc: mens
+    },
+    {
+      imgSrc: booze
+    },
+    {
+      imgSrc: sonar
+    },
+    {
+      imgSrc: wktv
+    },
+    {
+      imgSrc: roch
+    },
+    {
+      imgSrc: hikers
+    },
+    {
+      imgSrc: xiomi
+    },
+    {
+      imgSrc: garnier
+    },
+  ];
+
+    const renderItem = (item) => (
+        <div>
+          <img src={item.imgSrc} />
+        </div>
+    );
+
   return (
     <div>
       
     </div>
-  )
+  );
+
+  return <Baseproductcontainer />
+
 }
 
 export default Productcontainer;
