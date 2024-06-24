@@ -1,5 +1,8 @@
 import React from "react";
 import logo from "../Assets/img/logo2.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 const Footer = () => {
   return (
     <div className="bg-gray-900 h-[50vh]">
@@ -12,6 +15,15 @@ const Footer = () => {
           <p className="font-semibold text-white text-sm">
             Subscribe to our newsletter to get updates on our latest offers!
           </p>
+          <input
+            type="email"
+            placeholder="Enter E-mail Address"
+            className="border w-[230px] h-[50px] rounded-md bg-white p-7"
+          />
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            className="relative text-gray-400 h-[20px] w-[20px] right-56"
+          />
         </div>
       </div>
     </div>
