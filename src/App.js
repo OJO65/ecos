@@ -9,6 +9,7 @@ import Carousel3 from './Components/Carousel3.jsx';
 import Carousel4 from './Components/Carousel4.jsx';
 import Carousel5 from './Components/Carousel5.jsx';
 import Productcontainer from './Components/Productcontainer.jsx';
+import Footer from './Components/Footer.jsx';
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
       {!isLoginPage && <div className='mb-6 mr-[20px] ml-[20px] rounded-md'><Carousel4 /></div>}
       {!isLoginPage && <div className="mb-6"><Carousel5 /></div>}
       {!isLoginPage && <div className="mb-6"><Productcontainer /></div>}
+      {!isLoginPage && <Footer />}
       <Routes>
         <Route path="/Login" element={<Login />} />
       </Routes>
