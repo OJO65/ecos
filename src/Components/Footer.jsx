@@ -87,8 +87,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-500 h-[80vh] -translate-y-20">
-        <div className="grid grid-cols-6 border translate-y-3">
+      <div className="bg-gray-500 h-[65vh] -translate-y-20">
+        <div className="grid grid-cols-6 translate-y-3">
           <div>
             <p className="text-white font-bold text-sm ml-5 p-2">NEED HELP?</p>
             <ul className="text-white text-xs ml-7">
@@ -143,6 +143,24 @@ const Footer = () => {
               <li>Become a Sales Consultant</li>
               <li>Become a Logistics Service Partner</li>
               <li>Jumia City Partner Program</li>
+            </ul>
+          </div>
+          <br />
+          <div>
+            <p className="text-white font-bold text-sm ml-5 p-2">
+              JUMIA INTERNATIONAL
+            </p>
+            <ul className="text-white text-xs ml-7 grid grid-cols-2">
+              <li>Algeria</li>
+              <li>Nigeria</li>
+              <li>Ivory Coast</li>
+              <li>Egypt</li>
+              <li>Senegal</li>
+              <li>Tunisia</li>
+              <li>Ghana</li>
+              <li>Uganda</li>
+              <li>Morocco</li>
+              <li>Zando</li>
             </ul>
           </div>
         </div>
