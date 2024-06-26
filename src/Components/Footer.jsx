@@ -13,7 +13,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <div className="bg-gray-900 h-[50vh]">
+      <div className="bg-gray-900 h-[50vh] max-w-full">
         <div className="flex mr-[100px] ml-[160px]">
           <div>
             <img

@@ -2,11 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: fit-content;
+}
 
 #root {
     background-image: url(./Assets/img/bg.jpg) ;
     height: 600vh;
     background-size: contain;
     background-repeat: repeat;
+    border: 1px solid red;
+    max-width: fit-content;
 }
 

@@ -55,7 +55,7 @@ const Navbar = () => {
   
 
   return (
-    <div className="bg-white md:flex items-center box-border shadow-md">
+    <div className="bg-white md:flex items-center box-border shadow-md max-w-full">
       <div className="ml-2 mr-32 md:ml-16">
         <img src={logo} className="w-40" alt="Logo" />
       </div>
