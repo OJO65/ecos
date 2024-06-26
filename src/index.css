@@ -5,7 +5,7 @@
 
 #root {
     background-image: url(./Assets/img/bg.jpg) ;
-    height: 100vh;
+    height: 600vh;
     background-size: contain;
     background-repeat: repeat;
 }

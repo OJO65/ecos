@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div className="bg-white h-[40vh] mr-5 ml-5 w-auto border border-red-500">
+    <div className="bg-white h-[140vh] mr-5 ml-5 w-auto rounded-md shadow-md mb-5">
       <h1 className="p-2">
         Jumia Kenya - Unveilng Our Leading E-Commerce Website
       </h1>
@@ -18,7 +18,9 @@ const Card = () => {
         and ease of buying online in Nairobi, Mombasa, Nakuru and all across
         Kenya.
       </p>
-      <h1 className="p-2">Best Prices, Premium Brands, and Diverse Categories</h1>
+      <h1 className="p-2">
+        Best Prices, Premium Brands, and Diverse Categories
+      </h1>
       <p className="p-2 text-xs">
         Our commitment is to provide you with unbeatable prices, ensuring you
         get the most value for your money when you buy online. Explore a vast
@@ -31,6 +33,84 @@ const Card = () => {
         at best prices that can't be matched, hailing from renowned top brands
         such as Tecno, Infinix, Samsung, Oppo, Xiaomi, Apple and many more.
       </p>
+      <h1 className="p-2">
+        Tempting Offers, Exclusive Promotions, and Enormous Savings
+      </h1>
+      <p className="p-2 text-xs">
+        Get ready to be enchanted by our tempting offers, exclusive promotions,
+        and substantial discounts when you buy online. Our online store is your
+        gateway to unparalleled stock clearance sales. From lightning-quick
+        flash sales to the grandeur of Black Friday, we ensure that your online
+        shopping experience is not only cost-effective but also exhilarating.
+        Save on an extensive range of products, from watches to air
+        conditioners, laptops, sneakers, washing machine, bluetooth speakers and
+        earbuds.
+      </p>
+      <h1 className="p-2">Exceptional Services</h1>
+      <p className="p-2 text-xs">
+        At our online store, we go the extra mile to ensure your online shopping
+        experience is seamless and gratifying. Benefit from our delivery
+        service, bringing your purchases directly to your doorstep, making your
+        experience utterly hassle-free. What's more, we offer a wide range of
+        products with free delivery & shipping, making your shopping even more
+        convenient and economical. So, browse our selection and enjoy the added
+        benefit of no shipping charges on these items. Shop with confidence in
+        our official stores, where authenticity is guaranteed. Searching for
+        quality without breaking the bank when you buy online? Explore our
+        refurbished options, offering like-new products at budget-friendly
+        prices. Discover the world at your doorstep with Jumia Global! Our
+        handpicked selection of top products shipped from abroad brings the best
+        of international quality and innovation right to your fingertips.
+      </p>
+      <h1 className="p-2">Don't Miss Our Exclusive Campaign Events</h1>
+      <p className="p-2 text-xs">
+        Mark your calendar for our spectacular campaign events. Tech Week is
+        your portal to the latest technological innovations, Jumia Anniversary
+        celebrates fantastic deals,Black Friday promises to be the shopping
+        extravaganza of the year, and the Jumia Festival is your exclusive
+        ticket to a world of savings on your favorite brands. Join these events
+        for the ultimate online shopping experience brimming with exciting stock
+        clearance sales, discounts, and products that cater to your every need
+        when you buy online. Ensure you're part of the excitement! At Jumia
+        Kenya, we've brought the entire shopping universe right to your
+        fingertips. We're not just an online store; we're your ally in
+        discovering the finest online sales, premium offers, captivating deals,
+        and unparalleled discounts. Shop with us today and embrace the future of
+        online shopping!
+      </p>
+      <h1 className="p-2">FAQ</h1>
+      <ol className="p-2 list-decimal ml-4">
+        <li>How can I place an order?</li>
+        <span className="text-xs">
+          Placing an order is easy! Simply browse our website, select the
+          products you want, add them to your cart, and proceed to checkout.
+          Follow the on-screen instructions to complete your purchase.
+        </span>
+        <li> What payment methods do you accept?</li>
+        <span className="text-xs">
+          We accept a variety of payment methods, including credit cards and
+          cash on delivery. Choose the one that suits you best during the
+          checkout process.
+        </span>
+        <li>How long does delivery take?</li>
+        <span className="text-xs">
+          Delivery times may vary depending on your location and the product. We
+          strive to deliver your orders as quickly as possible, and you can
+          check the estimated delivery time during the checkout process
+        </span>
+        <li>Do you offer refunds or returns?</li>
+        <span className="text-xs">
+          Yes, we have a hassle-free return and refund policy. If you're not
+          satisfied with your purchase, you can initiate a return request, and
+          we'll guide you through the process.
+        </span>
+        <li>Is my personal information safe?</li>
+        <span className="text-xs">
+          Absolutely. We take data security seriously and have robust measures
+          in place to protect your personal information. Your data is safe with
+          us.
+        </span>
+      </ol>
     </div>
   );
 };
