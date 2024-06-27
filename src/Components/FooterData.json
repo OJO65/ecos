@@ -1,0 +1,79 @@
+{
+    "sections": [
+      {
+        "title": "NEED HELP?",
+        "links": ["Chat with us", "Help Center", "Contact Us"]
+      },
+      {
+        "title": "USEFUL LINKS",
+        "links": [
+          "Track Your Order",
+          "Shipping and Delivery",
+          "Pick-up Stations",
+          "Return Policy",
+          "How To Order?",
+          "Dispute Resolution Policy",
+          "Corporate and Bulk Purchase",
+          "Advertise with Jumia",
+          "Report a Product",
+          "Jumia Payment Information Guidelines"
+        ]
+      },
+      {
+        "title": "ABOUT JUMIA",
+        "links": [
+          "About us",
+          "Returns and Refunds Policy",
+          "Jumia Careers",
+          "Jumia Express",
+          "Terms & Conditions",
+          "Store Credit Terms & Conditions",
+          "Privacy Notice",
+          "Cookies Notice",
+          "Flash Sales",
+          "Jumia Global",
+          "Jumia anniversary 2024"
+        ]
+      },
+      {
+        "title": "MAKE MONEY WITH JUMIA",
+        "links": [
+          "Sell on Jumia",
+          "Vendor Hub",
+          "Become a Sales Consultant",
+          "Become a Logistics Service Partner",
+          "Jumia City Partner Program"
+        ]
+      },
+      {
+        "title": "JUMIA INTERNATIONAL",
+        "links": [
+          "Algeria",
+          "Nigeria",
+          "Ivory Coast",
+          "Egypt",
+          "Senegal",
+          "Tunisia",
+          "Ghana",
+          "Uganda",
+          "Morocco",
+          "Zando"
+        ]
+      }
+    ],
+    "socialMedia": [
+      {
+        "icon": "faFacebook",
+        "link": "https://www.facebook.com"
+      },
+      {
+        "icon": "faInstagram",
+        "link": "https://www.instagram.com"
+      },
+      {
+        "icon": "faYoutube",
+        "link": "https://www.youtube.com"
+      }
+    ]
+  }
+  
