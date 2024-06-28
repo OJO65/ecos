@@ -37,7 +37,7 @@ const BaseProductCarousel = ({
   return (
     <div className="relative flex flex-col bg-white box-border shadow-lg rounded-md">
       <header
-        className={`flex justify-between items-center p-3 rounded-t-md ${
+        className={`flex justify-between items-center p-3 rounded-t-md max-w-full ${
           redBackground ? "bg-red-600" : ""
         }`}
       >

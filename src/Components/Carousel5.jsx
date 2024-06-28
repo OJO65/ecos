@@ -69,8 +69,8 @@ const Carousel5 = () => {
 
   return (
     <div>
-        <header className='bg-red-600 ml-[20px] mr-[20px] p-2 rounded-md'>
-            <h1 className='text-center text-white font-bold'>Half Price Shop||50% OFF!</h1>
+        <header className='bg-red-600 max-w-full ml-[20px] mr-[20px] p-2'>
+            <h1 className='text-center text-white font-bold mr-auto ml-auto'>Half Price Shop||50% OFF!</h1>
         </header>
       <BaseCarousel items={items} itemRenderer={itemRenderer} />
     </div>

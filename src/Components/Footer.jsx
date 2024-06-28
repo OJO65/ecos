@@ -10,7 +10,22 @@ import {
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import footerData from "../Components/footerData.json";
+
 const Footer = () => {
+  const getIcon = (iconName) => {
+    switch (iconName) {
+      case "faFacebook":
+        return faFacebook;
+      case "faInstagram":
+        return faInstagram;
+      case "faYoutube":
+        return faYoutube;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
       <div className="bg-gray-900 h-[50vh] max-w-full">
@@ -35,7 +50,6 @@ const Footer = () => {
               icon={faEnvelope}
               className="relative text-gray-400 h-[20px] w-[20px] right-56 translate-y-1"
             />
-
             <div className="w-[240px] ml-[250px] -translate-y-16 -translate-x-5">
               <button className="border hover:text-orange-500 hover:border-orange-500 p-2 bg-gray-900 h-[50px] w-[100px] m-2 rounded-md font-bold text-white">
                 MALE
@@ -88,88 +102,28 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-gray-500 h-[65vh] -translate-y-20">
-        <div className="grid grid-cols-6 translate-y-3">
-          <div>
-            <p className="text-white font-bold text-sm ml-5 p-2">NEED HELP?</p>
-            <ul className="text-white text-xs ml-7">
-              <li>Chat with us</li>
-              <li>Help Center</li>
-              <li>Contact Us</li>
-            </ul>
-          </div>
-          <br />
-          <div>
-            <p className="text-white font-bold text-sm ml-5 p-2">
-              USEFUL LINKS
-            </p>
-            <ul className="text-white text-xs ml-7">
-              <li>Track Your Order</li>
-              <li>Shipping and Delivery</li>
-              <li>Pick-up Stations</li>
-              <li>Return Policy</li>
-              <li>How To Order?</li>
-              <li>Dispute Resolution Policy</li>
-              <li>Coperate and Bulk Purchase</li>
-              <li>Advertise with Jumia</li>
-              <li>Report a Product</li>
-              <li>Jumia Payment Information Guidelines</li>
-            </ul>
-          </div>
-          <br />
-          <div>
-            <p className="text-white font-bold text-sm ml-5 p-2">ABOUT JUMIA</p>
-            <ul className="text-white text-xs ml-7">
-              <li>About us</li>
-              <li>Returns and Refunds Policy</li>
-              <li>Jumia Careers</li>
-              <li>Jumia Express</li>
-              <li>Terms & Conditions</li>
-              <li>Store Credit Terms & Conditions</li>
-              <li>Privacy Notice</li>
-              <li>Cookies Notice</li>
-              <li>Flash Sales</li>
-              <li>JUmia Global</li>
-              <li>Jumia anniversary 2024</li>
-            </ul>
-          </div>
-          <br />
-          <div>
-            <p className="text-white font-bold text-sm ml-5 p-2">
-              MAKE MONEY WITH JUMIA
-            </p>
-            <ul className="text-white text-xs ml-7">
-              <li>Sell on Jumia</li>
-              <li>Vendor Hub</li>
-              <li>Become a Sales Consultant</li>
-              <li>Become a Logistics Service Partner</li>
-              <li>Jumia City Partner Program</li>
-            </ul>
-          </div>
-          <br />
-          <div>
-            <p className="text-white font-bold text-sm ml-5 p-2">
-              JUMIA INTERNATIONAL
-            </p>
-            <ul className="text-white text-xs ml-7 grid grid-cols-2">
-              <li>Algeria</li>
-              <li>Nigeria</li>
-              <li>Ivory Coast</li>
-              <li>Egypt</li>
-              <li>Senegal</li>
-              <li>Tunisia</li>
-              <li>Ghana</li>
-              <li>Uganda</li>
-              <li>Morocco</li>
-              <li>Zando</li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-7 translate-y-3">
+          {footerData.sections.map((section, index) => (
+            <div key={index} className="p-2">
+              <p className="text-white font-bold text-sm ml-5 p-1 max-w-full">
+                {section.title}
+              </p>
+              <ul className="text-white text-xs ml-7">
+                {section.links.map((link, idx) => (
+                  <li key={idx}>{link}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
         <br />
         <p className="text-white text-sm font-semibold ml-7">JOIN US</p>
         <div className="flex ml-6">
-          <FontAwesomeIcon icon={faFacebook} className="m-1" />
-          <FontAwesomeIcon icon={faInstagram} className="m-1" />
-          <FontAwesomeIcon icon={faYoutube} className="m-1" />
+          {footerData.socialMedia.map((social, idx) => (
+            <a href={social.link} key={idx} className="m-1">
+              <FontAwesomeIcon icon={getIcon(social.icon)} />
+            </a>
+          ))}
         </div>
       </div>
     </>

@@ -28,7 +28,7 @@ import gif8 from "../Assets/img/_S_ecobank.jpg";
 import gif9 from "../Assets/img/KE_Generic_JA24_Live_BF.gif";
 
 const Banner = () => {
-  const gifs = [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8, gif9];
+  const gifs = [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8];
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
   const [hoveredSubMenu, setHoveredSubMenu] = useState(null);
   const [isHoveringList, setIsHoveringList] = useState(false);
@@ -306,7 +306,7 @@ const Banner = () => {
 
   return (
     <div
-      className="md:flex hidden m-2 rounded-md relative"
+      className="md:flex hidden m-2 rounded-md relative mr-auto ml-auto "
       onMouseEnter={() => setIsHoveringList(true)}
       onMouseLeave={() => setIsHoveringList(false)}
     >
