@@ -1,3 +1,4 @@
+/* App.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,10 +11,16 @@
 }
 
 #root {
-    background-image: url(./Assets/img/bg.jpg) ;
-    height: 655vh;
+    background-image: url(./Assets/img/bg.jpg);
     background-size: contain;
     background-repeat: repeat;
-    max-width: fit-content;
 }
 
+.login-page {
+    height: auto;
+    background: white;
+}
+
+.main-page {
+    height: 655vh;
+}

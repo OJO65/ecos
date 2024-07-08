@@ -29,11 +29,17 @@ const Navbar = () => {
   };
 
   const handleClickOutside = (event) => {
-    if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
+    if (
+      accountDropdownRef.current &&
+      !accountDropdownRef.current.contains(event.target)
+    ) {
       setShowAccountDropdown(false);
     }
 
-    if (helpDropdownRef.current && !helpDropdownRef.current.contains(event.target)) {
+    if (
+      helpDropdownRef.current &&
+      !helpDropdownRef.current.contains(event.target)
+    ) {
       setShowHelpDropdown(false);
     }
   };
@@ -52,19 +58,18 @@ const Navbar = () => {
   const handleSignInClick = () => {
     window.location.href = "/Login";
   };
-  
 
   return (
     <div className="bg-white md:flex items-center box-border shadow-md max-w-full">
       <div className="ml-2 mr-32 md:ml-16">
         <img src={logo} className="w-40" alt="Logo" />
       </div>
-      <div className="md:flex hidden">
+      <div className="md:flex hidden p-2 ml-auto mr-auto">
         <div className="relative">
           <input
             type="text"
             placeholder="search products, brands and categories"
-            className="border border-gray-300 px-3 py-1 rounded w-96 mr-2 pl-8 text-lg"
+            className="border border-gray-300 px-3 py-1 rounded mr-2 pl-8 text-lg"
           />
           <FontAwesomeIcon
             icon={faSearch}
@@ -84,12 +89,18 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faAngleDown} className="left-2 top-3 m-2" />
         </div>
         {showAccountDropdown && (
-          <div ref={accountDropdownRef} className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center z-10">
-            <button className="border p-2 rounded-md font-bold bg-orange-400 my-2" onClick={handleSignInClick}>
+          <div
+            ref={accountDropdownRef}
+            className="absolute top-full left-0 mt-2 w-52 bg-white shadow-lg rounded-md flex flex-col items-center z-10"
+          >
+            <button
+              className="border p-2 rounded-md font-bold bg-orange-400 my-2"
+              onClick={handleSignInClick}
+            >
               SIGN IN
             </button>
             <hr className="my-1 border-gray-500" />
-            <ul className="w-full">
+            <ul className="w-52">
               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
                 <FontAwesomeIcon icon={faUser} /> My Account
               </li>
@@ -108,12 +119,15 @@ const Navbar = () => {
           className="m-2 p-2 cursor-pointer flex items-center"
           onClick={toggleHelpDropdown}
         >
-          <FontAwesomeIcon icon={faCircleQuestion} className="h-5 mr-2" />{" "}
-          Help <FontAwesomeIcon icon={faAngleDown} className="left-2 top-3 m-2" />
+          <FontAwesomeIcon icon={faCircleQuestion} className="h-5 mr-2" /> Help{" "}
+          <FontAwesomeIcon icon={faAngleDown} className="left-2 top-3 m-2" />
         </div>
         {showHelpDropdown && (
-          <div ref={helpDropdownRef} className="z-10 absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center">
-            <ul className="w-full flex flex-col items-center">
+          <div
+            ref={helpDropdownRef}
+            className="z-10 absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md flex flex-col items-center"
+          >
+            <ul className="w-52 flex flex-col items-center">
               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full text-center">
                 Help Center
               </li>

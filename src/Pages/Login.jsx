@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 const Login = () => {
   return (
-    <div className="bg-white">
+    
+      <div className="border text-center">
       <img className="h-[60px] ml-auto mr-auto mt-16" src={star} />
-      <h1 className="font-bold text-xl p-2 relative block text-center">
+      <h1 className="font-bold text-xl p-2 relative block text-center ml-auto mr-auto">
         Welcome To Jumia
       </h1>
       <h2 className=" text-sm mt-[8px] mr-[500px] mb-[16px] ml-[500px] block text-center">
@@ -35,7 +36,7 @@ const Login = () => {
           Continue
         </button>
       </div>
-      <div className="disclaimer text-sm text-center mt-2">
+      <div className="disclaimer text-sm text-center mt-2 ml-auto mr-auto">
         <label>By continuing you agree to Jumia’s</label>
         <br />
         <a
@@ -56,7 +57,8 @@ const Login = () => {
         For further support, you may visit the Help Center or contact our customer service team.
       </p>
       <img className="h-[60px] mr-auto ml-auto mt-14" src={logo} />
-    </div>
+      </div>
+
   );
 };
 
